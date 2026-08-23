@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-scheme="default">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolverhampton Taxi Knowledge Test</title>
+    <meta name="description" content="Official Wolverhampton Taxi Knowledge Test preparation app">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/views.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Theme Bootstrap: Inline script to handle theme persistence -->
+    <script>
+        // Handle theme persistence
+        const savedTheme = localStorage.getItem('wt-theme') || 'light';
+        const savedScheme = localStorage.getItem('wt-scheme') || 'default';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('data-scheme', savedScheme);
+    </script>
+
+    <!-- Navbar -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="logo">
+                <div class="logo-mark">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v4l3 3"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="logo-text">Wolverhampton Taxi</div>
+                    <div class="logo-in">Knowledge Test</div>
+                </div>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#dashboard" class="nav-link active" data-view="dashboard">Dashboard</a>
+                <a href="#exams" class="nav-link" data-view="exams">Mock Tests</a>
+                <a href="#practice" class="nav-link" data-view="practice">Practice</a>
+                <a href="#history" class="nav-link" data-view="history">History</a>
+                <a href="#bookmarks" class="nav-link" data-view="bookmarks">Bookmarks</a>
+                <a href="#settings" class="nav-link" data-view="settings">Settings</a>
+                <a href="#guide" class="nav-link" data-view="guide">Application Guide</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Disclaimer Banner -->
+    <div class="disclaimer-banner" id="disclaimerBanner">
+        <i class="fas fa-info-circle"></i>
+        <span>This app is for practice purposes only. For official licensing information, please refer to Wolverhampton City Council's licensed vehicle department.</span>
+    </div>
+
+    <!-- Page Container -->
+    <div class="page" id="pageContainer">
+        <!-- Views will be loaded here via JS routing -->
+        <div id="viewContainer"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="currentYear"></span> Wolverhampton Taxi Knowledge Test. All rights reserved.</p>
+        <p>Version 1.0.0 • Built with vanilla HTML/CSS/JS</p>
+    </footer>
+
+    <!-- Backdrop for modals -->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- Core JavaScript -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

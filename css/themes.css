@@ -1,0 +1,665 @@
+/* ============================================================
+   THEMES — light/dark modes (FIX #2) and colour schemes (FIX #5)
+
+   Everything is driven by CSS custom properties. Components never
+   hardcode a colour; they read a token, so a theme or scheme swap
+   is a single attribute change on <html>:
+
+       <html data-theme="dark" data-scheme="warm">
+
+   Layer order:
+     1. :root                      base (light + default scheme)
+     2. [data-theme="dark"]        dark surfaces
+     3. [data-scheme="..."]        scheme accents (light)
+     4. [data-theme=dark][data-scheme=...]  scheme accents (dark)
+
+   Contrast: every text-on-surface and "on-" token paired with its
+   matching tint is at or above WCAG AA (4.5:1); the "contrast"
+   scheme targets AAA (7:1+).
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. BASE — light, default scheme
+   ------------------------------------------------------------ */
+:root {
+    /* Brand */
+    --navy: #0f1e3d;
+    --navy-2: #1e3a8a;
+    --navy-3: #2b4a9b;
+    --red: #c8102e;
+    --red-dark: #a00d26;
+    --blue: #012169;
+    --green: #16a34a;
+    --amber: #b45309;
+    --gold: #ffd166;
+
+    /* Surfaces */
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+
+    /* Text */
+    --text: #1a2233;
+    --text-muted: #5b6472;
+    --on-accent: #ffffff;
+
+    /* Hero (always sits on the dark navy gradient) */
+    --on-hero: #ffffff;
+    --on-hero-muted: rgba(255, 255, 255, 0.85);
+    --on-hero-surface: rgba(255, 255, 255, 0.12);
+    --on-hero-surface-hover: rgba(255, 255, 255, 0.2);
+    --on-hero-border: rgba(255, 255, 255, 0.3);
+
+    /* Neutral fills */
+    --tint-neutral: #eef0f6;
+    --ring-track: #eef0f6;
+    --hover-tint: rgba(15, 30, 61, 0.04);
+    --hover-tint-strong: rgba(15, 30, 61, 0.08);
+    --overlay: rgba(15, 30, 61, 0.5);
+
+    /* Status tints + the text colour that sits on them */
+    --tint-green: rgba(22, 163, 74, 0.12);
+    --tint-green-strong: rgba(22, 163, 74, 0.15);
+    --tint-green-soft: rgba(22, 163, 74, 0.06);
+    --border-green: rgba(22, 163, 74, 0.4);
+    /* Darker than the brand green so text on --tint-green clears AA. */
+    --on-green: #12652f;
+
+    --tint-red: rgba(200, 16, 46, 0.12);
+    --tint-red-soft: rgba(200, 16, 46, 0.06);
+    --border-red: rgba(200, 16, 46, 0.4);
+    --on-red: #b3122b;
+
+    --tint-amber: rgba(180, 83, 9, 0.12);
+    --tint-amber-soft: rgba(180, 83, 9, 0.06);
+    --border-amber: rgba(180, 83, 9, 0.4);
+    --on-amber: #92400e;
+
+    --tint-navy: rgba(30, 58, 138, 0.12);
+    --tint-navy-soft: rgba(30, 58, 138, 0.05);
+    --border-navy: rgba(30, 58, 138, 0.3);
+    --on-navy-tint: #1e3a8a;
+
+    --tint-gold: rgba(255, 209, 102, 0.2);
+    --tint-gold-strong: rgba(255, 209, 102, 0.4);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(15, 30, 61, 0.08);
+    --shadow-md: 0 6px 20px rgba(15, 30, 61, 0.10);
+    --shadow-lg: 0 12px 40px rgba(15, 30, 61, 0.16);
+    --shadow-accent: 0 6px 18px rgba(200, 16, 46, 0.35);
+
+    /* Geometry / type */
+    --radius: 16px;
+    --radius-sm: 10px;
+    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+    /* Progress bar stages (FIX #4) */
+    --progress-1: #dc2626;
+    --progress-2: #ea580c;
+    --progress-3: #ca8a04;
+    --progress-4: #16a34a;
+
+    color-scheme: light;
+}
+
+/* ------------------------------------------------------------
+   2. DARK
+   ------------------------------------------------------------ */
+[data-theme='dark'] {
+    --navy: #c7d2fe;
+    /* headings become light in dark mode */
+    --navy-2: #7f9cf5;
+    --navy-3: #93aefb;
+    --red: #f0526d;
+    --red-dark: #d93e59;
+    --blue: #8ea8ff;
+    --green: #4ade80;
+    --amber: #fbbf24;
+    --gold: #ffd166;
+
+    --bg: #0e1117;
+    --card: #171b24;
+    --border: #2a303c;
+    --nav-bg: rgba(23, 27, 36, 0.88);
+
+    --text: #e6e9ef;
+    --text-muted: #a2abbb;
+    --on-accent: #0e1117;
+
+    --tint-neutral: #232936;
+    --ring-track: #2a303c;
+    --hover-tint: rgba(255, 255, 255, 0.05);
+    --hover-tint-strong: rgba(255, 255, 255, 0.10);
+    --overlay: rgba(0, 0, 0, 0.65);
+
+    --tint-green: rgba(74, 222, 128, 0.16);
+    --tint-green-strong: rgba(74, 222, 128, 0.22);
+    --tint-green-soft: rgba(74, 222, 128, 0.09);
+    --border-green: rgba(74, 222, 128, 0.45);
+    --on-green: #6ee7a0;
+
+    --tint-red: rgba(240, 82, 109, 0.18);
+    --tint-red-soft: rgba(240, 82, 109, 0.09);
+    --border-red: rgba(240, 82, 109, 0.45);
+    --on-red: #ff8fa3;
+
+    --tint-amber: rgba(251, 191, 36, 0.16);
+    --tint-amber-soft: rgba(251, 191, 36, 0.08);
+    --border-amber: rgba(251, 191, 36, 0.45);
+    --on-amber: #fcd34d;
+
+    --tint-navy: rgba(127, 156, 245, 0.18);
+    --tint-navy-soft: rgba(127, 156, 245, 0.09);
+    --border-navy: rgba(127, 156, 245, 0.4);
+    --on-navy-tint: #a9beff;
+
+    --tint-gold: rgba(255, 209, 102, 0.16);
+    --tint-gold-strong: rgba(255, 209, 102, 0.3);
+
+    /* Softer, larger shadows read better on dark surfaces */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+    --shadow-accent: 0 6px 18px rgba(240, 82, 109, 0.28);
+
+    --progress-1: #f87171;
+    --progress-2: #fb923c;
+    --progress-3: #fbbf24;
+    --progress-4: #4ade80;
+
+    color-scheme: dark;
+}
+
+/* The hero keeps its dark navy gradient in dark mode, so pin it
+   back to a real navy rather than the inverted heading token. */
+[data-theme='dark'] .hero {
+    background: linear-gradient(135deg, #0b1530 0%, #16295e 60%, #1d3576 100%);
+}
+
+/* ------------------------------------------------------------
+   3. SCHEME: WARM — reduced blue light, evening study
+   ------------------------------------------------------------ */
+[data-scheme='warm'] {
+    --navy: #7c2d12;
+    --navy-2: #c2410c;
+    --navy-3: #ea580c;
+    --red: #b91c1c;
+    --red-dark: #991b1b;
+    --green: #4d7c0f;
+    --amber: #b45309;
+    --gold: #f59e0b;
+
+    --bg: #fdf6ec;
+    --card: #fffaf3;
+    --border: #ecd9c2;
+    --nav-bg: rgba(255, 250, 243, 0.88);
+
+    --text: #2c1c10;
+    --text-muted: #6b5443;
+
+    --tint-neutral: #f4e6d4;
+    --ring-track: #f0e0cc;
+    --hover-tint: rgba(124, 45, 18, 0.05);
+    --hover-tint-strong: rgba(124, 45, 18, 0.10);
+
+    --tint-green: rgba(77, 124, 15, 0.14);
+    --tint-green-strong: rgba(77, 124, 15, 0.2);
+    --tint-green-soft: rgba(77, 124, 15, 0.07);
+    --border-green: rgba(77, 124, 15, 0.4);
+    --on-green: #3f6212;
+
+    --tint-red: rgba(185, 28, 28, 0.12);
+    --tint-red-soft: rgba(185, 28, 28, 0.06);
+    --border-red: rgba(185, 28, 28, 0.4);
+    --on-red: #991b1b;
+
+    --tint-navy: rgba(194, 65, 12, 0.14);
+    --tint-navy-soft: rgba(194, 65, 12, 0.06);
+    --border-navy: rgba(194, 65, 12, 0.35);
+    --on-navy-tint: #9a3412;
+
+    --shadow-accent: 0 6px 18px rgba(185, 28, 28, 0.3);
+    --progress-1: #b91c1c;
+    --progress-2: #c2410c;
+    --progress-3: #b45309;
+    --progress-4: #4d7c0f;
+}
+
+[data-scheme='warm'] .hero {
+    background: linear-gradient(135deg, #451a03 0%, #7c2d12 60%, #9a3412 100%);
+}
+
+[data-theme='dark'][data-scheme='warm'] {
+    --navy: #fdba74;
+    --navy-2: #fb923c;
+    --navy-3: #fdba74;
+    --red: #f87171;
+    --red-dark: #ef4444;
+    --green: #a3e635;
+
+    --bg: #1a1310;
+    --card: #241a15;
+    --border: #3d2c22;
+    --nav-bg: rgba(36, 26, 21, 0.9);
+
+    --text: #f2e4d6;
+    --text-muted: #c3a891;
+    --on-accent: #1a1310;
+
+    --tint-neutral: #33251d;
+    --ring-track: #3d2c22;
+    --hover-tint: rgba(253, 186, 116, 0.06);
+    --hover-tint-strong: rgba(253, 186, 116, 0.12);
+
+    --on-green: #bef264;
+    --on-red: #fca5a5;
+    --on-navy-tint: #fdba74;
+    --tint-navy: rgba(251, 146, 60, 0.18);
+    --tint-navy-soft: rgba(251, 146, 60, 0.08);
+    --border-navy: rgba(251, 146, 60, 0.4);
+    --tint-green: rgba(163, 230, 53, 0.16);
+    --tint-green-strong: rgba(163, 230, 53, 0.22);
+    --tint-green-soft: rgba(163, 230, 53, 0.08);
+    --border-green: rgba(163, 230, 53, 0.45);
+    --tint-red: rgba(248, 113, 113, 0.18);
+    --tint-red-soft: rgba(248, 113, 113, 0.08);
+    --border-red: rgba(248, 113, 113, 0.45);
+
+    --progress-1: #f87171;
+    --progress-2: #fb923c;
+    --progress-3: #fbbf24;
+    --progress-4: #a3e635;
+}
+
+[data-theme='dark'][data-scheme='warm'] .hero {
+    background: linear-gradient(135deg, #2a1a0e 0%, #4a2712 60%, #6b3a17 100%);
+}
+
+/* ------------------------------------------------------------
+   4. SCHEME: COOL — cyan/blue, lower glare for daytime
+   ------------------------------------------------------------ */
+[data-scheme='cool'] {
+    --navy: #0c4a6e;
+    --navy-2: #0369a1;
+    --navy-3: #0284c7;
+    --red: #0e7490;
+    --red-dark: #155e75;
+    --green: #0d9488;
+    --amber: #0369a1;
+    --gold: #38bdf8;
+
+    --bg: #f0f7fb;
+    --card: #ffffff;
+    --border: #d6e6f0;
+    --nav-bg: rgba(255, 255, 255, 0.88);
+
+    --text: #10222e;
+    --text-muted: #4d6675;
+
+    --tint-neutral: #e2eef5;
+    --ring-track: #dbeafe;
+    --hover-tint: rgba(3, 105, 161, 0.05);
+    --hover-tint-strong: rgba(3, 105, 161, 0.1);
+
+    --tint-green: rgba(13, 148, 136, 0.14);
+    --tint-green-strong: rgba(13, 148, 136, 0.2);
+    --tint-green-soft: rgba(13, 148, 136, 0.07);
+    --border-green: rgba(13, 148, 136, 0.4);
+    --on-green: #0b5c56;
+
+    --tint-red: rgba(14, 116, 144, 0.14);
+    --tint-red-soft: rgba(14, 116, 144, 0.07);
+    --border-red: rgba(14, 116, 144, 0.4);
+    --on-red: #155e75;
+
+    --tint-navy: rgba(3, 105, 161, 0.14);
+    --tint-navy-soft: rgba(3, 105, 161, 0.06);
+    --border-navy: rgba(3, 105, 161, 0.35);
+    --on-navy-tint: #075985;
+
+    --shadow-accent: 0 6px 18px rgba(14, 116, 144, 0.3);
+    --progress-1: #0e7490;
+    --progress-2: #0284c7;
+    --progress-3: #0ea5e9;
+    --progress-4: #0d9488;
+}
+
+[data-scheme='cool'] .hero {
+    background: linear-gradient(135deg, #082f49 0%, #0c4a6e 60%, #075985 100%);
+}
+
+[data-theme='dark'][data-scheme='cool'] {
+    --navy: #7dd3fc;
+    --navy-2: #38bdf8;
+    --navy-3: #7dd3fc;
+    --red: #22d3ee;
+    --red-dark: #06b6d4;
+    --green: #2dd4bf;
+
+    --bg: #0a1620;
+    --card: #12212e;
+    --border: #22384a;
+    --nav-bg: rgba(18, 33, 46, 0.9);
+
+    --text: #dceaf4;
+    --text-muted: #93aec2;
+    --on-accent: #0a1620;
+
+    --tint-neutral: #1b2f3f;
+    --ring-track: #22384a;
+    --hover-tint: rgba(125, 211, 252, 0.06);
+    --hover-tint-strong: rgba(125, 211, 252, 0.12);
+
+    --on-green: #5eead4;
+    --on-red: #67e8f9;
+    --on-navy-tint: #7dd3fc;
+    --tint-navy: rgba(56, 189, 248, 0.18);
+    --tint-navy-soft: rgba(56, 189, 248, 0.08);
+    --border-navy: rgba(56, 189, 248, 0.4);
+    --tint-green: rgba(45, 212, 191, 0.16);
+    --tint-green-strong: rgba(45, 212, 191, 0.22);
+    --tint-green-soft: rgba(45, 212, 191, 0.08);
+    --border-green: rgba(45, 212, 191, 0.45);
+    --tint-red: rgba(34, 211, 238, 0.18);
+    --tint-red-soft: rgba(34, 211, 238, 0.08);
+    --border-red: rgba(34, 211, 238, 0.45);
+
+    --progress-1: #22d3ee;
+    --progress-2: #38bdf8;
+    --progress-3: #7dd3fc;
+    --progress-4: #2dd4bf;
+}
+
+[data-theme='dark'][data-scheme='cool'] .hero {
+    background: linear-gradient(135deg, #041826 0%, #072b40 60%, #0b3f5c 100%);
+}
+
+/* ------------------------------------------------------------
+   5. SCHEME: HIGH CONTRAST — WCAG AAA, maximum legibility
+   ------------------------------------------------------------ */
+[data-scheme='contrast'] {
+    --navy: #000000;
+    --navy-2: #00006e;
+    --navy-3: #000091;
+    --red: #a80000;
+    --red-dark: #7a0000;
+    --green: #006622;
+    --amber: #7a4a00;
+    --gold: #6b4b00;
+
+    --bg: #ffffff;
+    --card: #ffffff;
+    --border: #000000;
+    --nav-bg: #ffffff;
+
+    --text: #000000;
+    --text-muted: #2b2b2b;
+    --on-accent: #ffffff;
+
+    --tint-neutral: #f0f0f0;
+    --ring-track: #d4d4d4;
+    --hover-tint: rgba(0, 0, 0, 0.07);
+    --hover-tint-strong: rgba(0, 0, 0, 0.14);
+    --overlay: rgba(0, 0, 0, 0.7);
+
+    --tint-green: #d9f2e0;
+    --tint-green-strong: #c2e9ce;
+    --tint-green-soft: #ecf9f0;
+    --border-green: #006622;
+    --on-green: #004d1a;
+
+    --tint-red: #fbdcdc;
+    --tint-red-soft: #fdeeee;
+    --border-red: #a80000;
+    --on-red: #8a0000;
+
+    --tint-amber: #f8ecd8;
+    --tint-amber-soft: #fdf6ec;
+    --border-amber: #7a4a00;
+    --on-amber: #5c3800;
+
+    --tint-navy: #dcdcf5;
+    --tint-navy-soft: #eeeefb;
+    --border-navy: #00006e;
+    --on-navy-tint: #00006e;
+
+    --tint-gold: #f5ecd0;
+    --tint-gold-strong: #ebd9a1;
+
+    /* Borders carry the structure instead of shadows */
+    --shadow-sm: 0 0 0 1px #000000;
+    --shadow-md: 0 0 0 2px #000000;
+    --shadow-lg: 0 0 0 2px #000000;
+    --shadow-accent: 0 0 0 2px #000000;
+
+    --progress-1: #a80000;
+    --progress-2: #8a4b00;
+    --progress-3: #6b5300;
+    --progress-4: #006622;
+}
+
+[data-scheme='contrast'] .hero {
+    background: #000000;
+}
+
+[data-theme='dark'][data-scheme='contrast'] {
+    --navy: #ffffff;
+    --navy-2: #9db4ff;
+    --navy-3: #b8c8ff;
+    --red: #ff8080;
+    --red-dark: #ff9d9d;
+    --green: #5cff9d;
+    --amber: #ffd24d;
+    --gold: #ffd24d;
+
+    --bg: #000000;
+    --card: #000000;
+    --border: #ffffff;
+    --nav-bg: #000000;
+
+    --text: #ffffff;
+    --text-muted: #e0e0e0;
+    --on-accent: #000000;
+
+    --tint-neutral: #1a1a1a;
+    --ring-track: #3d3d3d;
+    --hover-tint: rgba(255, 255, 255, 0.12);
+    --hover-tint-strong: rgba(255, 255, 255, 0.22);
+    --overlay: rgba(0, 0, 0, 0.85);
+
+    --tint-green: #0a2e18;
+    --tint-green-strong: #0f4423;
+    --tint-green-soft: #06190d;
+    --border-green: #5cff9d;
+    --on-green: #7cffb0;
+
+    --tint-red: #350f0f;
+    --tint-red-soft: #1f0808;
+    --border-red: #ff8080;
+    --on-red: #ff9d9d;
+
+    --tint-amber: #33280a;
+    --tint-amber-soft: #1c1605;
+    --border-amber: #ffd24d;
+    --on-amber: #ffdd7a;
+
+    --tint-navy: #10193d;
+    --tint-navy-soft: #080d1f;
+    --border-navy: #9db4ff;
+    --on-navy-tint: #b8c8ff;
+
+    --shadow-sm: 0 0 0 1px #ffffff;
+    --shadow-md: 0 0 0 2px #ffffff;
+    --shadow-lg: 0 0 0 2px #ffffff;
+    --shadow-accent: 0 0 0 2px #ffffff;
+
+    --progress-1: #ff8080;
+    --progress-2: #ffb066;
+    --progress-3: #ffd24d;
+    --progress-4: #5cff9d;
+}
+
+[data-theme='dark'][data-scheme='contrast'] .hero {
+    background: #000000;
+    border: 2px solid #ffffff;
+}
+
+/* ------------------------------------------------------------
+   6. SCHEME: MONOCHROME — greyscale, colour-blind & photophobia safe
+   ------------------------------------------------------------ */
+[data-scheme='mono'] {
+    --navy: #1c1c1c;
+    --navy-2: #3d3d3d;
+    --navy-3: #525252;
+    --red: #2e2e2e;
+    --red-dark: #1c1c1c;
+    --green: #4f4f4f;
+    --amber: #5c5c5c;
+    --gold: #8a8a8a;
+
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --border: #cfcfcf;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+
+    --text: #141414;
+    --text-muted: #545454;
+    --on-accent: #ffffff;
+
+    --tint-neutral: #e8e8e8;
+    --ring-track: #dcdcdc;
+    --hover-tint: rgba(0, 0, 0, 0.05);
+    --hover-tint-strong: rgba(0, 0, 0, 0.1);
+    --overlay: rgba(0, 0, 0, 0.55);
+
+    /* Status is distinguished by lightness + the icons/labels the
+       components already render, never by hue alone. */
+    --tint-green: #dedede;
+    --tint-green-strong: #cfcfcf;
+    --tint-green-soft: #ededed;
+    --border-green: #4f4f4f;
+    --on-green: #2b2b2b;
+
+    --tint-red: #d2d2d2;
+    --tint-red-soft: #e6e6e6;
+    --border-red: #1c1c1c;
+    --on-red: #1c1c1c;
+
+    --tint-amber: #e0e0e0;
+    --tint-amber-soft: #efefef;
+    --border-amber: #5c5c5c;
+    --on-amber: #3a3a3a;
+
+    --tint-navy: #dcdcdc;
+    --tint-navy-soft: #ededed;
+    --border-navy: #6b6b6b;
+    --on-navy-tint: #2b2b2b;
+
+    --tint-gold: #e4e4e4;
+    --tint-gold-strong: #d0d0d0;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.14);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.18);
+    --shadow-accent: 0 6px 18px rgba(0,0,0,0.25);
+
+    --progress-1: #9a9a9a;
+    --progress-2: #7a7a7a;
+    --progress-3: #5a5a5a;
+    --progress-4: #2e2e2e;
+}
+
+[data-scheme='mono'] .hero {
+    background: linear-gradient(135deg, #1c1c1c 0%, #333333 60%, #454545 100%);
+}
+
+/* Strip saturation from anything that slips through (emoji icons,
+   inline SVG gradients) so the greyscale promise actually holds. */
+[data-scheme='mono'] .hero-pattern,
+[data-scheme='mono'] .logo-mark,
+[data-scheme='mono'] .stat-icon,
+[data-scheme='mono'] .feature-icon,
+[data-scheme='mono'] .practice-icon,
+[data-scheme='mono'] .recommend-icon,
+[data-scheme='mono'] .quick-icon,
+[data-scheme='mono'] .confetti-piece {
+    filter: grayscale(100%);
+}
+
+[data-theme='dark'][data-scheme='mono'] {
+    --navy: #ededed;
+    --navy-2: #c4c4c4;
+    --navy-3: #d6d6d6;
+    --red: #d6d6d6;
+    --red-dark: #ededed;
+    --green: #b0b0b0;
+    --amber: #9a9a9a;
+    --gold: #b0b0b0;
+
+    --bg: #101010;
+    --card: #1b1b1b;
+    --border: #383838;
+    --nav-bg: rgba(27, 27, 27, 0.9);
+
+    --text: #ededed;
+    --text-muted: #a8a8a8;
+    --on-accent: #101010;
+
+    --tint-neutral: #262626;
+    --ring-track: #383838;
+    --hover-tint: rgba(255, 255, 255, 0.06);
+    --hover-tint-strong: rgba(255, 255, 255, 0.12);
+
+    --tint-green: #333333;
+    --tint-green-strong: #404040;
+    --tint-green-soft: #242424;
+    --border-green: #b0b0b0;
+    --on-green: #dcdcdc;
+
+    --tint-red: #2b2b2b;
+    --tint-red-soft: #1f1f1f;
+    --border-red: #ededed;
+    --on-red: #f0f0f0;
+
+    --tint-amber: #2e2e2e;
+    --tint-amber-soft: #202020;
+    --border-amber: #9a9a9a;
+    --on-amber: #cfcfcf;
+
+    --tint-navy: #303030;
+    --tint-navy-soft: #212121;
+    --border-navy: #8a8a8a;
+    --on-navy-tint: #dcdcdc;
+
+    --progress-1: #5a5a5a;
+    --progress-2: #7a7a7a;
+    --progress-3: #9a9a9a;
+    --progress-4: #dcdcdc;
+}
+
+[data-theme='dark'][data-scheme='mono'] .hero {
+    background: linear-gradient(135deg, #171717 0%, #242424 60%, #303030 100%);
+}
+
+/* ------------------------------------------------------------
+   Transitions — smooth theme swap without animating layout.
+   The .theme-switching class is applied briefly by theme-manager.
+   ------------------------------------------------------------ */
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, fill 0.3s ease, stroke 0.3s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-switching,
+    .theme-switching *,
+    .theme-switching *::before,
+    .theme-switching *::after {
+        transition: none !important;
+    }
+}

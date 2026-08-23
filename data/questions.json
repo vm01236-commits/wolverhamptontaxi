@@ -1,0 +1,2391 @@
+[
+  {
+    "id": "wtx-q001",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "When working as a Private Hire Vehicle driver, where should you wear your badge?",
+    "options": [
+      "In your pocket",
+      "Upper part of body",
+      "On your leg",
+      "It's not necessary"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q002",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "Where should you display your additional drivers badge?",
+    "options": [
+      "Rear windscreen",
+      "Dashboard center",
+      "Top left front windscreen",
+      "Top right front windscreen"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q003",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "If you change your address, who must you notify within 7 days?",
+    "options": [
+      "Your operator only",
+      "The police",
+      "Council",
+      "DVLA only"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q004",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "Who should you report convictions or fixed penalties to, and within what period of time?",
+    "options": [
+      "Operator within 7 days",
+      "Council within 14 days",
+      "Police within 21 days",
+      "No need to report"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q005",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "If you move between operators during the currency of your Private Hire Vehicle driver's licence, who should you contact?",
+    "options": [
+      "Previous operator",
+      "New operator only",
+      "Council",
+      "Police"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q006",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "How often is a Private Hire Vehicle driver required to undergo a DBS (Criminal record) check?",
+    "options": [
+      "Every year",
+      "Every 2 years",
+      "Every 3 years",
+      "Every 5 years"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q007",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "What should you do if you lose your Private Hire Vehicle drivers badge?",
+    "options": [
+      "Wait and apply for renewal",
+      "Report it to the council",
+      "Buy a replacement online",
+      "Continue working without it"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q008",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "What should you do if your Private Hire Vehicle badge is stolen?",
+    "options": [
+      "Report to operator only",
+      "Report it to police and Council",
+      "Apply for new licence",
+      "Nothing required"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q009",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "If a licence holder ceases to operate how quickly must he/she surrender the vehicle driver's licence and badges to the licencing services?",
+    "options": [
+      "Immediately",
+      "Within 7 days",
+      "Within 14 days",
+      "Within 1 month"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q010",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "The holder of the licence must notify the Licencing Services in writing not less than how many hours before starting with a new operator?",
+    "options": [
+      "12 hours",
+      "24 hours",
+      "48 hours",
+      "72 hours"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q011",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "Do you have to supply full and accurate information on your DBS (Criminal Records Check) application form?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q012",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "Is it an offence not to wear your Private Hire Vehicle drivers badge while working?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q013",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "Taxi drivers do not need to wear or show identity badges to their passengers.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q014",
+    "category": "1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS",
+    "isKeyCategory": false,
+    "question": "Once you have submitted your application form to licencing services does this entitle you to immediately start work as a private hire driver?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 1 DRIVER RESPONSIBILITIES & LICENCE CONDITIONS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q015",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Can a private hire driver book a Private Hire Vehicle for a member of the public who approaches their vehicle?",
+    "options": [
+      "Yes, always",
+      "Yes, if operator approves",
+      "No",
+      "Only during daytime"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q016",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Can a member of the public book a Private Hire Vehicle by going in to the base?",
+    "options": [
+      "No, phone only",
+      "Yes",
+      "Only for regular customers",
+      "Only with appointment"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q017",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Is it acceptable for a Private Hire Vehicle driver to cruise around in his vehicle looking for customers for example: pubs or clubs?",
+    "options": [
+      "Yes, if licenced",
+      "Only at night",
+      "No",
+      "Yes, during quiet periods"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q018",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "If a member of the public approaches you when you are on duty in a Private Hire Vehicle and asks you to take them somewhere and they have not made a booking with the base do you do that?",
+    "options": [
+      "Yes, it's good business",
+      "Yes, if they pay extra",
+      "No",
+      "Only short distances"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q019",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "If a Private Hire Vehicle driver picks up a customer who has not booked the vehicle in advance, does the Private Hire Vehicle insurance cover this?",
+    "options": [
+      "Yes, fully covered",
+      "Partially covered",
+      "No",
+      "Depends on operator"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q020",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "If a Private Hire Vehicle driver is caught picking up passengers who have not booked in advance, what may happen to him or her?",
+    "options": [
+      "Warning only",
+      "Small fine",
+      "Suspension/revoke of the badge",
+      "Nothing serious"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q021",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Do all your jobs have to come through to the base?",
+    "options": [
+      "No, can take street hails",
+      "Only major jobs",
+      "Yes",
+      "Depends on time of day"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q022",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Can you pick up somebody up that tries to flags you down?",
+    "options": [
+      "Yes, always",
+      "Only in emergencies",
+      "No",
+      "Yes, if no taxi rank nearby"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q023",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Explain what the term 'illegal plying for hire' means for a private hire driver:",
+    "options": [
+      "Overcharging passengers",
+      "Picking up passengers off the streets without bookings",
+      "Working without insurance",
+      "Refusing passengers"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q024",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Which vehicle can legally ply for hire within the city boundary?",
+    "options": [
+      "Private Hire Vehicle",
+      "Hackney",
+      "Both",
+      "Neither"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q025",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Is the driver of a Private Hire Vehicle allowed to park the vehicle on a hackney carriage rank?",
+    "options": [
+      "Yes, when empty",
+      "Yes, at night",
+      "No",
+      "Yes, for short periods"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q026",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Can you wait outside a night club looking for a job?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q027",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "Can you park in a taxi rank?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q028",
+    "category": "2 PLYING FOR HIRE",
+    "isKeyCategory": false,
+    "question": "If a private hire driver illegally ply's for hire and picks up a passenger without the vehicle being pre-booked through the operator, the insurance is invalid.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 2 PLYING FOR HIRE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q029",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "When can you charge for carrying an assistance dog being accompanied by a person with the disability?",
+    "options": [
+      "Standard pet fee applies",
+      "Small additional charge",
+      "Never",
+      "Depends on distance"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q030",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "If your operator asks you to pick up a passenger and when you get there, you find he/she has an assistance dog. When can you refuse to carry an assistance dog?",
+    "options": [
+      "Never",
+      "If you have an exemption certificate",
+      "If dog is too large",
+      "If car will get dirty"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q031",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "What animals must a private hire or hackney carriage driver convey in the vehicle if requested by passenger?",
+    "options": [
+      "All small pets",
+      "Guide dogs",
+      "Cats only",
+      "No animals required"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q032",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "You pick up two disabled passengers, you charge them extra because they are disabled. Is that acceptable?",
+    "options": [
+      "Yes, more work involved",
+      "Yes, if agreed in advance",
+      "No",
+      "Depends on disability"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q033",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "If a disabled passenger asks for assistance what do you do?",
+    "options": [
+      "Direct them to get help elsewhere",
+      "Minimal help only",
+      "Help as much as they require",
+      "Refuse, not your job"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q034",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "Can the dog be positioned as per the passenger's request?",
+    "options": [
+      "No, driver decides",
+      "Yes",
+      "Only in boot",
+      "Only on floor"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q035",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "Can you charge to carry Guide Dogs?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q036",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "Can you charge extra on top of your fair for a disabled passenger?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q037",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "Most autistic people like routines.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q038",
+    "category": "3 DISABILITY AWARENESS (EQUALITY ACT 2010)",
+    "isKeyCategory": false,
+    "question": "Children with disabilities are more likely to be abused than other children.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 3 DISABILITY AWARENESS (EQUALITY ACT 2010) section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q039",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "If you believe that a child is under sexual abuse who do you contact?",
+    "options": [
+      "Your operator",
+      "The council",
+      "The police",
+      "Social services only"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q040",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "A child is a person under the age of:",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "21"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q041",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "You pick up a couple from a local pub and one of the individual appears to be considerably underage, what should you do?",
+    "options": [
+      "Ignore it",
+      "Ask for ID",
+      "Report it to your operator",
+      "Call police immediately"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q042",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "If you're concerned about a vulnerable child you should?",
+    "options": [
+      "Tell family member",
+      "Contact MASH – Multi Agency Safeguarding Hub",
+      "Investigate yourself",
+      "Discuss with other drivers"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q043",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "You pick up a vulnerable passenger, should you let your operator know what time you picked them up and dropped them off?",
+    "options": [
+      "Not necessary",
+      "Only if asked",
+      "Yes",
+      "Only for children"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q044",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "You are offered a sexual favour in place of payment, what should you do?",
+    "options": [
+      "Accept if no one knows",
+      "Decline and report it to your operator",
+      "Accept the fare instead",
+      "Ignore and drive away"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q045",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "If a child is scared what do you do?",
+    "options": [
+      "Try to calm them yourself",
+      "Inform the police",
+      "Take them home quickly",
+      "Call their parents"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q046",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "If a woman offers you a sexual favour what do you do?",
+    "options": [
+      "Accept if appropriate",
+      "Refuse her",
+      "Report to police immediately",
+      "Negotiate payment"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q047",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "State which of the following would raise concerns for you? (Select all that apply)",
+    "options": [
+      "Children with physical injuries",
+      "Well-dressed children",
+      "Children accepting lifts in different cars",
+      "Sending/receiving inappropriate images"
+    ],
+    "correctIndexes": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q048",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "When we talk about children we only mean young people under the age of 14 years old.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q049",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "It is OK to share confidential information about one of your passengers who you think is vulnerable with another taxi driver.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q050",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "Safeguarding only means providing first aid to someone who is injured.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q051",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "It is ok to give a vulnerable person your personal mobile number.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q052",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "Only people from poor backgrounds become child abusers.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q053",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "Taxi drivers have no responsibility for safeguarding their passengers.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q054",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "Taxi drivers have a responsibility for investigating when they think a vulnerable passenger is being abused.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q055",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "One example of emotional abuse is when someone is repeatedly told they are not worth listening to and are worthless.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q056",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "If someone's carer fails to feed them or provide suitable clothing for the weather, they could be guilty of neglect.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q057",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "It is OK for you to take an unplanned route when taking a vulnerable person home even though you have been told not to do so by their carer.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q058",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "Safeguarding means taking care of the needs of others who are not very good at looking after themselves.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q059",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "You should always encourage lone passengers to sit in the front of the taxi with you.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q060",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "It is OK to give a passenger a gift e.g. perfume, alcohol etc. because you like them.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q061",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "People who are sexually exploited must have deserved it by their behaviour.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q062",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "Sexual exploitation only happens in certain ethnic cultural environments.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q063",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "I believe a child I am carrying in my vehicle is at risk of child sexual exploitation should I tell anyone?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q064",
+    "category": "4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS",
+    "isKeyCategory": false,
+    "question": "Failure to provide adequate food or clothing is a type of abuse.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 4 SAFEGUARDING CHILDREN AND VULNERABLE ADULTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q065",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "How should the driver alert the passenger to his arrival?",
+    "options": [
+      "Use horn repeatedly",
+      "Send text message",
+      "Get out and walk to the door please do not use the horn",
+      "Flash headlights"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q066",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "In what way should you assist passengers? (Select all that apply)",
+    "options": [
+      "Help with luggage IN and OUT of the car",
+      "Carry luggage to and from the front door",
+      "Carry passengers",
+      "Enter their home"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q067",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "When your passenger gets out of the Private Hire Vehicle, at the end of each journey what must you do?",
+    "options": [
+      "Drive away immediately",
+      "Check the vehicle for any property left",
+      "Clean entire vehicle",
+      "Call next customer"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q068",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "Which three things should the taxi driver do when requested by the passenger? (Select all that apply)",
+    "options": [
+      "Convey a reasonable quantity of luggage",
+      "Afford a reasonable assistance in loading and unloading",
+      "Afford assistance in removing luggage to the entrance of any building",
+      "Carry shopping inside home"
+    ],
+    "correctIndexes": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q069",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "Which type of route should the driver take when carrying passengers?",
+    "options": [
+      "Scenic route",
+      "Longest route for more fare",
+      "The direct route",
+      "Fastest route regardless of distance"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q070",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "When can the Private Hire Vehicle not use the most direct route?",
+    "options": [
+      "Never",
+      "Passenger request",
+      "During rush hour",
+      "At night"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q071",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "How should a driver dress whilst working? (Select all that apply)",
+    "options": [
+      "Casual clothes",
+      "High standard of personal hygiene",
+      "Freshly laundered respectable clothing",
+      "No specific requirements"
+    ],
+    "correctIndexes": [
+      1,
+      2
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q072",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "An elderly person asks you to take their shopping into their house, you should:",
+    "options": [
+      "Take it inside",
+      "Politely refuse and take it to their front door",
+      "Leave it in the car",
+      "Call family member"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q073",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "Apart from carrying out the journey what other assistance may be required of a licenced driver by a passenger? (Select all that apply)",
+    "options": [
+      "Getting in and out of the car",
+      "Safety seat belt",
+      "Luggage",
+      "Medical assistance"
+    ],
+    "correctIndexes": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q074",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "A drunk woman wants to sit in the front and you tell her sit in the back or you are going to refuse to take her. What is she allowed to do?",
+    "options": [
+      "Must sit in back",
+      "Must exit vehicle",
+      "She can sit anywhere that she likes (in the front seat)",
+      "Driver has final say"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q075",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "Can you tell a woman where to sit in a car?",
+    "options": [
+      "Yes, always",
+      "Yes, for safety",
+      "No they can sit anywhere (even in the front seat)",
+      "Only if alone"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q076",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "The driver should attend on time when hired.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q077",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "The driver shall take all reasonable precautions to make sure the passenger reaches their destination safely.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q078",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "Private Hire Vehicle Drivers have a responsibility to check with their base if their passenger has any medical needs before starting the journey.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q079",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "Is it good practice to double up on bookings?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q080",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "How should a driver behave when conveying passengers to their destination? (Professional and Polite)",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q081",
+    "category": "5 CUSTOMER CARE & SAFETY",
+    "isKeyCategory": false,
+    "question": "Are you required to have a first aid pack in your taxi?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 5 CUSTOMER CARE & SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q082",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "What is the maximum number of passengers a saloon car licenced as a Private Hire Vehicle can carry?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q083",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "What is the maximum number of passengers a minibus licenced as a Private Hire Vehicle can carry?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q084",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "When can you remove the vehicle plates/door signs?",
+    "options": [
+      "When off duty",
+      "At night",
+      "Never",
+      "Weekends only"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q085",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Who is allowed to drive the Private Hire Vehicle?",
+    "options": [
+      "Anyone with driving licence",
+      "Private Hire Driver",
+      "Family members",
+      "Friends with permission"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q086",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "How many mechanical tests must a car have between 10-12 years old?",
+    "options": [
+      "1 per year",
+      "2 per year",
+      "3 per year",
+      "No tests required"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q087",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "In what form do the council require insurance documentation to be presented?",
+    "options": [
+      "Photocopy",
+      "Original",
+      "Email copy",
+      "Verbal confirmation"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q088",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "The original certificate of insurance or a cover note can be inspected at any time by whom? (Select all that apply)",
+    "options": [
+      "Public",
+      "Police",
+      "Council",
+      "Other drivers"
+    ],
+    "correctIndexes": [
+      1,
+      2
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q089",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Which items are strongly recommended to be provided and maintained in the vehicle at all times? (Select all that apply)",
+    "options": [
+      "Fire extinguisher",
+      "First aid kit",
+      "Spare wheel",
+      "Tool kit"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q090",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "What is the minimum age recommended for a passenger to travel in the front seat with normal seat belt restrain?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q091",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Who may inspect the maintenance policy/statement and other maintenance records of the vehicle? (Select all that apply)",
+    "options": [
+      "Council",
+      "Police",
+      "Passengers",
+      "Insurance company"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q092",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Which document in addition to all the maintenance records must be kept available for inspection at any time?",
+    "options": [
+      "Service receipts",
+      "Maintenance policy",
+      "Owner's manual",
+      "Purchase receipt"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q093",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Which two things shall be displayed and clearly visible to passengers in the vehicle? (Select all that apply)",
+    "options": [
+      "Badge",
+      "Licence",
+      "Insurance certificate",
+      "MOT certificate"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q094",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "If you have an accident in your Private Hire Vehicle causing damage affecting the safety performance or appearance of the vehicle, when do you have to report it to licencing services?",
+    "options": [
+      "Within 24 hours",
+      "Within 48 hours",
+      "Within 72 hours",
+      "Within 7 days"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q095",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "How old should the vehicle be when being licenced by the council?",
+    "options": [
+      "10 years maximum",
+      "12 years",
+      "15 years maximum",
+      "No limit"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q096",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "What shall be adhered to during the maintenance of the vehicle? (Select all that apply)",
+    "options": [
+      "The seats of the vehicle shall be properly cushioned and covered",
+      "The floor of the vehicle shall be provided with a properly fitted carpet, mat or other suitable covering",
+      "All paintwork shall be maintained to a high standard in a single colour, free from dents, scratches or rust",
+      "No specific requirements"
+    ],
+    "correctIndexes": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q097",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "What additional things should you remember to check when carrying out a vehicle maintenance check? (Select all that apply)",
+    "options": [
+      "All trim, wheel hubs and glass shall be secure and free from damage",
+      "Only factory fitted privacy glass (tinted) will be permitted",
+      "Any modifications allowed",
+      "After-market tinting permitted"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q098",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Which of the following shall be adhered to during the maintenance of the vehicle? (Select all that apply)",
+    "options": [
+      "All tyres including the spare must comply with the vehicle manufacturer's specification and the requirements of the Road Vehicles (Construction and Use) Regulations",
+      "The owner of the vehicle shall make sure the vehicle is clean",
+      "Tyres can be different brands",
+      "Spare tyre not necessary"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q099",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Which two things should the plate do when it is attached to your vehicle? (Select all that apply)",
+    "options": [
+      "Rear of the exterior of the vehicle",
+      "It must be positioned adjacent to the number plate area of the vehicle",
+      "Inside the vehicle",
+      "On the dashboard"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q100",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Where must these warning notices be positioned?",
+    "options": [
+      "Inside only",
+      "These must be positioned clearly and be visible to people outside of the vehicle at all times",
+      "On request only",
+      "Not mandatory"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q101",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Is a Private Hire Vehicle always a Private Hire Vehicle?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q102",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "The use of magnetic door stickers is prohibited.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q103",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "No smoking signs must be displayed at all times.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q104",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "The owner of the vehicle must be the insurance policy holder.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q105",
+    "category": "6 VEHICLE CONDITIONS & MAINTENANCE",
+    "isKeyCategory": false,
+    "question": "Can you put a magnet sign on your Private Hire Vehicle?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 6 VEHICLE CONDITIONS & MAINTENANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q106",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "Does a Private Hire Vehicle drivers licence issued by your city council, allow you to drive a Private Hire Vehicle licenced by another council?",
+    "options": [
+      "Yes, all UK councils",
+      "Yes, within same county",
+      "No",
+      "Yes, with permission"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q107",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "When can the holder of a Private Hire Vehicle licence drive a hackney carriage?",
+    "options": [
+      "Anytime",
+      "With permission",
+      "Never",
+      "During emergencies"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q108",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "What is the act in 1972 specifies a separate insurance for Taxi cars?",
+    "options": [
+      "Transport Act",
+      "Road Traffic Act",
+      "Vehicle Act",
+      "Insurance Act"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q109",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "What is the act in 1976 which you could be fined £1000 if you do not comply?",
+    "options": [
+      "Road Traffic Act",
+      "Miscellaneous Provisions Act 1976",
+      "Transport Act",
+      "Local Government Act"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q110",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "Under which policy should the owner of a Private Hire Vehicle have a valid Policy of insurance?",
+    "options": [
+      "Part V of the Road Traffic Act",
+      "Part VI of the Road Traffic Act 1988",
+      "Part VII of the Road Traffic Act",
+      "Standard car insurance"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q111",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "When a Private Hire Vehicle is involved in an accident you must tell the Licensing Services in writing within 72 hours as required under which law?",
+    "options": [
+      "Road Traffic Act 1988",
+      "Section 50 (3) of the Local Government (Miscellaneous Provisions Act) 1976",
+      "Health and Safety Act",
+      "Transport Act"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q112",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "Which two main legislative acts cover the licencing of Hackney Carriages and Private Hire Vehicles? (Select all that apply)",
+    "options": [
+      "Local Government Misc. Provisions Act 1976",
+      "Police Clause Act 1847",
+      "Road Traffic Act 1988",
+      "Transport Act 2000"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q113",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "If you wish to appeal the Council's decision within how many days do you have a right to appeal to the Magistrates Court?",
+    "options": [
+      "7 days",
+      "14 days",
+      "21 days",
+      "28 days"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q114",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "The holder of this licence may not change their operator more than once within how many hour period?",
+    "options": [
+      "24 hours",
+      "48 hours",
+      "72 hours",
+      "No limit"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q115",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "If the person is above the age of 45 they must have a medical exam:",
+    "options": [
+      "Every 3 years",
+      "Every 5 years",
+      "Every year",
+      "Not required"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q116",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "If the person is above 65 they must have a medical exam:",
+    "options": [
+      "Every 6 months",
+      "Every year",
+      "Every 2 years",
+      "Every 5 years"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q117",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "The licence holder must notify the licencing services in writing of any changes to their medical circumstances within:",
+    "options": [
+      "12 hours",
+      "24 hours",
+      "48 hours",
+      "7 days"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q118",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "How soon should a driver return his badge to the council after the licence has been suspended or revoked?",
+    "options": [
+      "Immediately",
+      "Within 7 days",
+      "Within 14 days",
+      "Within 1 month"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q119",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "If you are convicted of an offence within what period of time should report it to the council?",
+    "options": [
+      "Within 3 days",
+      "Within 7 days",
+      "Within 14 days",
+      "Within 21 days"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q120",
+    "category": "7 LEGISLATION & LICENSING PROCESS",
+    "isKeyCategory": false,
+    "question": "How should the driver inform the Council of any conviction?",
+    "options": [
+      "Phone call",
+      "Email",
+      "Written",
+      "In person"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 7 LEGISLATION & LICENSING PROCESS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q121",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "When may a Private Hire Vehicle driver not wear a seat belt?",
+    "options": [
+      "Never",
+      "Short journeys",
+      "When he is carrying fare paying passengers",
+      "In town only"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q122",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "Who is responsible for a child of 13 wearing the seatbelt in a Private Hire Vehicle when they are accompanied by their parent?",
+    "options": [
+      "The parent",
+      "The driver",
+      "The child",
+      "The operator"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q123",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "Who is responsible for passengers over 14 to wear their seatbelts?",
+    "options": [
+      "The driver",
+      "The passenger",
+      "The operator",
+      "All share responsibility"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q124",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "When can a child sit on a mother's lap or knee?",
+    "options": [
+      "Never allowed",
+      "When they are less than 3 years old",
+      "Any age if parent agrees",
+      "Under 5 years old"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q125",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "Where can a child sit on a mother's lap or knee?",
+    "options": [
+      "Front seat only",
+      "Sit in the back rear seats",
+      "Anywhere in vehicle",
+      "Not permitted"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q126",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "A mother needs to urgently go to hospital she sits in the back rear of your saloon taxi with her 3 children putting the child under 3 years old on her lap (knee). Just as you are about to move off the father comes running and sits in the empty front passenger seat. Do you take them?",
+    "options": [
+      "Yes, it's an emergency",
+      "Yes, hospital is priority",
+      "No, you are only insured for 4 passengers in your saloon",
+      "Yes, but charge extra"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q127",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "A four year old child sits on their mother's lap in the back of your Private Hire Vehicle. Is this allowed?",
+    "options": [
+      "Yes, under 5 is fine",
+      "Yes, if parent agrees",
+      "No",
+      "Yes, in emergencies"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q128",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "Your vehicle is licenced for 4 passengers. When you get to your booking there are three small children only. What should you do?",
+    "options": [
+      "Take them, they're small",
+      "Refuse to carry",
+      "Charge for 3 adults",
+      "Ask parent to hold one"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q129",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "Who is responsible for a child of 12 wearing the seatbelt in a Private Hire Vehicle when they are accompanied by their parent?",
+    "options": [
+      "The parent",
+      "The child",
+      "The driver",
+      "The operator"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q130",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "Is it compulsory for a private hire driver to wear a seatbelt at all times?",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q131",
+    "category": "8 SEATBELT & PASSENGER SAFETY",
+    "isKeyCategory": false,
+    "question": "There are no expectations that the car must have child booster seats.",
+    "options": [],
+    "correctIndexes": [],
+    "explanation": "Refer to the 8 SEATBELT & PASSENGER SAFETY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q132",
+    "category": "9 SMOKING & HEALTH",
+    "isKeyCategory": false,
+    "question": "When are you allowed to smoke in a Private Hire Vehicle?",
+    "options": [
+      "When no passengers",
+      "With window open",
+      "Never",
+      "After hours only"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 9 SMOKING & HEALTH section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q133",
+    "category": "9 SMOKING & HEALTH",
+    "isKeyCategory": false,
+    "question": "Can a driver smoke in a licenced vehicle?",
+    "options": [
+      "Yes, when off duty",
+      "Yes, with passenger permission",
+      "No",
+      "Yes, outside only"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 9 SMOKING & HEALTH section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q134",
+    "category": "9 SMOKING & HEALTH",
+    "isKeyCategory": false,
+    "question": "Is the driver of a hackney carriage allowed to eat in a vehicle whilst it is hired?",
+    "options": [
+      "Yes, if hungry",
+      "Yes, during long journeys",
+      "No",
+      "Yes, with permission"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 9 SMOKING & HEALTH section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q135",
+    "category": "10 FARES & PAYMENTS",
+    "isKeyCategory": false,
+    "question": "Can a driver charge a fare higher than that displayed on the meter at the termination of the journey?",
+    "options": [
+      "Yes, if traffic was bad",
+      "Yes, if late at night",
+      "No",
+      "Yes, with passenger agreement"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 10 FARES & PAYMENTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q136",
+    "category": "10 FARES & PAYMENTS",
+    "isKeyCategory": false,
+    "question": "Is the driver of a Private Hire Vehicle fitted with a fare meter allowed to negotiate a fare with a passenger?",
+    "options": [
+      "Yes, always",
+      "Yes, for regular customers",
+      "No",
+      "Yes, for long distances"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 10 FARES & PAYMENTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q137",
+    "category": "10 FARES & PAYMENTS",
+    "isKeyCategory": false,
+    "question": "Is the driver of a hackney carriage allowed to switch the fare meter off when leaving the city boundary?",
+    "options": [
+      "Yes, standard practice",
+      "Yes, if agreed",
+      "No",
+      "Yes, for out of town"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 10 FARES & PAYMENTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q138",
+    "category": "10 FARES & PAYMENTS",
+    "isKeyCategory": false,
+    "question": "Is the driver of a Private Hire Vehicle or hackney carriage required to give a written receipt for the fare if requested?",
+    "options": [
+      "No, not required",
+      "Only for business fares",
+      "Yes",
+      "At driver's discretion"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 10 FARES & PAYMENTS section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q139",
+    "category": "11 LOST PROPERTY",
+    "isKeyCategory": false,
+    "question": "What is the time limit for depositing property left in a Private Hire Vehicle or a hackney carriage by a passenger?",
+    "options": [
+      "Within 12 hours",
+      "Within 24 hours",
+      "Within 48 hours",
+      "Within 72 hours"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 11 LOST PROPERTY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q140",
+    "category": "11 LOST PROPERTY",
+    "isKeyCategory": false,
+    "question": "Where should you take property which has been left in a Hackney Carriage or Private Hire Vehicle by a passenger?",
+    "options": [
+      "Keep it in vehicle",
+      "Operator's office",
+      "Police station",
+      "Your home"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 11 LOST PROPERTY section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q141",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "What action can be taken against you if you are found to be in breach of your Private Hire Vehicle drivers licence condition?",
+    "options": [
+      "Warning letter",
+      "Small fine",
+      "Badge is suspended/revoked",
+      "Retraining required"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q142",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "If your Private Hire Vehicle drivers licence is suspended what does this mean?",
+    "options": [
+      "Can drive with restrictions",
+      "You cannot drive as Private Hire Driver",
+      "Need retraining only",
+      "Can drive hackney only"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q143",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "Who should you give your Private Hire Vehicle driver's licence to?",
+    "options": [
+      "Keep it yourself",
+      "Operator",
+      "Display in vehicle",
+      "Council holds it"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q144",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "Full and accurate records of every booking must be kept by who?",
+    "options": [
+      "Driver",
+      "Operator",
+      "Council",
+      "Not required"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q145",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "Who may inspect the records of bookings? (Select all that apply)",
+    "options": [
+      "Public",
+      "Police",
+      "Council",
+      "Other drivers"
+    ],
+    "correctIndexes": [
+      1,
+      2
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q146",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "What must a licence holder do before using a computerised record keeping system?",
+    "options": [
+      "Nothing special",
+      "Get approval from the council",
+      "Inform police",
+      "Pay extra fee"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q147",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "The holder of this Private Hire Vehicle licence shall submit which two things to their operator? (Select all that apply)",
+    "options": [
+      "The issued Private Hire Vehicle Licence",
+      "An image of their DVLA Drivers Licence",
+      "Proof of address",
+      "Bank details"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q148",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "If the driver is driving outside of the Wolverhampton city council, what should they do?",
+    "options": [
+      "Get special permission",
+      "Not allowed",
+      "Report to the Wolverhampton city council for any issues",
+      "Register with other council"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q149",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "The licence holder shall comply with all traffic regulations and what else? (Select all that apply)",
+    "options": [
+      "Do not park on double yellow lines",
+      "Do no obstruct any road, pavement, or thoroughfare at any times",
+      "Speed limits can be flexible",
+      "Parking restrictions don't apply"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q150",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "Where must the driver's badge be displayed whilst working?",
+    "options": [
+      "In pocket",
+      "In glove box",
+      "Visible to passengers",
+      "Not necessary"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q151",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "If you are concerned about another drivers conduct you should:",
+    "options": [
+      "Ignore it",
+      "Confront them",
+      "Report it to the relevant agency",
+      "Discuss with passengers"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q152",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "State which of the following is your responsibility? (Select all that apply)",
+    "options": [
+      "Duty of care – make sure vulnerable passengers are safe",
+      "Treat all passengers with dignity and respect",
+      "Whistle blowing – in respect to other drivers/other services/staff",
+      "Investigating crimes"
+    ],
+    "correctIndexes": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q153",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "If the owner of the vehicle is an accident management company or a leasing hiring company who is responsible for making sure the correct livery is on the car at all times?",
+    "options": [
+      "The driver",
+      "The management company",
+      "The council",
+      "The insurance company"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q154",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "What is the purpose of a driver having a driver's badge? (Select all that apply)",
+    "options": [
+      "ID for passenger",
+      "Confirmation of successful passing taxi test",
+      "Fashion accessory",
+      "Optional requirement"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "multi-choice"
+  },
+  {
+    "id": "wtx-q155",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "Before commencement of work where should the driver's licence be delivered to and deposited with?",
+    "options": [
+      "Police station",
+      "Council office",
+      "Taxi base",
+      "Keep with driver"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  },
+  {
+    "id": "wtx-q156",
+    "category": "12 ENFORCEMENT & COMPLIANCE",
+    "isKeyCategory": false,
+    "question": "Within what period of time should the driver inform the Council of any change of address?",
+    "options": [
+      "Within 3 days",
+      "Within 7 days",
+      "Within 14 days",
+      "Within 1 month"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Refer to the 12 ENFORCEMENT & COMPLIANCE section of the application guide for detailed information.",
+    "type": "single-choice"
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "badge": {
+    "title": "Private Hire Driver Licence (the Badge)",
+    "eligibility_checklist": [],
+    "process_steps": [],
+    "fees_table": [
+      "> - GP records request (may vary)",
+      "---"
+    ],
+    "renewal_info": "You should start your renewal around **8–12 weeks before expiry.** This gives enough time for DBS checks, medical updates, and council processing. If your licence expires before renewal is completed, you will **not be able to work** until it is reissued."
+  },
+  "plate": {
+    "title": "Private Hire Vehicle Licence (the Plate)",
+    "eligibility_checklist": [],
+    "process_steps": [],
+    "fees_table": [
+      "|---|---|---|",
+      "---",
+      "---"
+    ],
+    "renewal_info": ""
+  },
+  "how_both_work_together": "| Stage | Action | ||| | **1** | Request GP medical records | | **2** | Complete Group 2 Medical (D4 Form) | | **3** | Apply for Enhanced DBS Check | | **4** | Complete 1-Day Driver Training & Assessment (pass 75%) | | **5** | Submit Driver Licence (Badge) application online with all documents | | **6** | Await council approval (2–6 weeks) | | **7** | Receive your **Private Hire Driver Badge** ✅ | | **8** | Obtain MOT (within 10 days of vehicle application) | | **9** | Submit Vehicle Licence (Plate) application online with V5/DBS/MOT | | **10** | Receive email within ~15 days with plate collection details | | **11** | Collect your **Vehicle Plates** ✅ | | **12** | Register with a licensed private hire operator and **start working!** 🚗 |",
+  "faqs": [
+    {
+      "id": "faq-01",
+      "question": "Can I work as a private hire driver without both licences",
+      "answer": "No A Wolverhampton licensed private hire driver can only drive a Wolverhampton licensed private hire vehicle This licence does not permit the holder to drive a hackney carriage"
+    },
+    {
+      "id": "faq-02",
+      "question": "Do I need to live in Wolverhampton to apply",
+      "answer": "No Current legislation means private hire drivers can operate anywhere in England and Wales outside of London Wolverhampton licences are accepted nationally by many operators"
+    },
+    {
+      "id": "faq-03",
+      "question": "How long does the full application take",
+      "answer": "The time it takes depends on how quickly you complete each stage On average, you can complete the full licensing process in around **2 to 6 weeks**, although delays may occur if your DBS check, medical appointment, or training sessions take longer to arrange"
+    },
+    {
+      "id": "faq-04",
+      "question": "Can I check the progress of my application",
+      "answer": "Yes You can check the status of your application on the council's online tracking tool The council publishes the date up to which they are currently processing new applications Your application is in the queue and will be dealt with as soon as possible"
+    },
+    {
+      "id": "faq-05",
+      "question": "What is the My Licence Portal and what is it for",
+      "answer": "If you hold a current Driver or Vehicle Licence with City of Wolverhampton Council, you can register for the \"My Licence Portal \" You can use the portal to maintain your licence details and notify the council of any amendments and changes You need to register with your email address that is held on file If you have amended your email address, you must notify Licensing Services by emailing **driver lic@wolverhampton gov uk**"
+    },
+    {
+      "id": "faq-06",
+      "question": "What happens if my details change after I get licensed",
+      "answer": "The holder of a private hire driver licence must notify Licensing Services via the My Licence Portal **within 7 days** of any change of their name, address, phone number and/or email address during the period of the licence"
+    },
+    {
+      "id": "faq-07",
+      "question": "Can I pick up passengers without a pre-booking",
+      "answer": "No The holder of a private hire licence must not, whilst driving or in charge of a private hire vehicle, take or agree to take a fare without it being pre-booked via a licensed Operator This is known as \"plying for hire\" and can result in licence revocation"
+    },
+    {
+      "id": "faq-08",
+      "question": "What if I have convictions on my record",
+      "answer": "If there are any offences found during the application process, you may receive an invite for a hearing You can check the Council's Guidelines (in the Downloads section) to assess this This may cause delays with your application"
+    },
+    {
+      "id": "faq-09",
+      "question": "When should I renew my driver licence",
+      "answer": "You should start your renewal around **8–12 weeks before expiry ** This gives enough time for DBS checks, medical updates, and council processing"
+    },
+    {
+      "id": "faq-10",
+      "question": "Do I need a medical at renewal",
+      "answer": "When your licence is about to expire, you'll need to go through the renewal process, which also **requires a driver's medical examination if you're aged 45 or older**, or **annually if you're 65 or older **"
+    },
+    {
+      "id": "faq-11",
+      "question": "What is the NFC badge and can passengers verify me",
+      "answer": "The contactless ID card technology enables passengers, police and other councils to verify the identity of the driver as well as their licence status If passengers are unable to use the NFC function, they can check the driver against the council's online registers"
+    },
+    {
+      "id": "faq-12",
+      "question": "What does the NR3S register mean for my application",
+      "answer": "The National Register for Revocations, Refusals and Suspensions (NR3S) is checked as part of all new applications If you have had a licence revoked or refused by another authority, this will be flagged during your application"
+    }
+  ]
+}
