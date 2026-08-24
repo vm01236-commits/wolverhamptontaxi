@@ -1,86 +1,706 @@
 {
-  "badge": {
-    "title": "Private Hire Driver Licence (the Badge)",
-    "eligibility_checklist": [],
-    "process_steps": [],
-    "fees_table": [
-      "> - GP records request (may vary)",
-      "---"
-    ],
-    "renewal_info": "You should start your renewal around **8–12 weeks before expiry.** This gives enough time for DBS checks, medical updates, and council processing. If your licence expires before renewal is completed, you will **not be able to work** until it is reissued."
-  },
-  "plate": {
-    "title": "Private Hire Vehicle Licence (the Plate)",
-    "eligibility_checklist": [],
-    "process_steps": [],
-    "fees_table": [
-      "|---|---|---|",
-      "---",
-      "---"
-    ],
-    "renewal_info": ""
-  },
-  "how_both_work_together": "| Stage | Action | ||| | **1** | Request GP medical records | | **2** | Complete Group 2 Medical (D4 Form) | | **3** | Apply for Enhanced DBS Check | | **4** | Complete 1-Day Driver Training & Assessment (pass 75%) | | **5** | Submit Driver Licence (Badge) application online with all documents | | **6** | Await council approval (2–6 weeks) | | **7** | Receive your **Private Hire Driver Badge** ✅ | | **8** | Obtain MOT (within 10 days of vehicle application) | | **9** | Submit Vehicle Licence (Plate) application online with V5/DBS/MOT | | **10** | Receive email within ~15 days with plate collection details | | **11** | Collect your **Vehicle Plates** ✅ | | **12** | Register with a licensed private hire operator and **start working!** 🚗 |",
+  "sections": [
+    {
+      "title": "🚖 Complete Guide to Getting Licensed as a Private Hire Driver in Wolverhampton",
+      "content": [
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "City of Wolverhampton Council — Private Hire Licensing (Badge &amp; Plate)"
+        },
+        {
+          "type": "note",
+          "text": "<strong>Source:</strong> <a href=\"https://www.wolverhampton.gov.uk/licences/taxi-licences\" target=\"_blank\" rel=\"noopener\">wolverhampton.gov.uk/licences/taxi-licences</a>"
+        },
+        {
+          "type": "paragraph",
+          "text": "To legally work as a <strong>Private Hire driver</strong> in Wolverhampton, you must hold <strong>TWO separate licences</strong>:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Licence",
+            "What It Is",
+            "Who Needs It"
+          ],
+          "rows": [
+            [
+              "<strong>Private Hire Driver Licence (Badge)</strong>",
+              "Licence to drive a private hire vehicle",
+              "The <strong>Driver</strong>"
+            ],
+            [
+              "<strong>Private Hire Vehicle Licence (Plate)</strong>",
+              "Licence attached to the vehicle",
+              "The <strong>Vehicle Owner</strong>"
+            ]
+          ]
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ <strong>Important:</strong> You cannot legally operate as a private hire driver without BOTH licences in place. Many drivers obtain their Badge first, then apply for their Plate."
+        }
+      ]
+    },
+    {
+      "title": "🪪 PART 1: Private Hire Driver Licence (The Badge)",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "✅ Before You Start — Eligibility Checklist"
+        },
+        {
+          "type": "paragraph",
+          "text": "You must be at least <strong>21 years old</strong> and have held a <strong>full UK driving licence for a minimum of 12 months.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "You must also be able to prove the following before your application can be processed:"
+        },
+        {
+          "type": "paragraph",
+          "text": "You will need: a valid UK driving licence, DBS enhanced disclosure, medical form (DVLA D4), proof of right to work in the UK, proof of address (from the last 3 months), a passport photo, and a completed application form."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "📋 Step-by-Step Process — Private Hire Driver Licence (Badge)"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 1 — Request Your Full Medical Records from Your GP"
+        },
+        {
+          "type": "paragraph",
+          "text": "Before you can book your medical examination, you need your full medical records."
+        },
+        {
+          "type": "paragraph",
+          "text": "Wolverhampton Council requires that the doctor must have access to the driver's full medical records before they can complete the examination. You need to request your full medical records from your GP surgery by speaking to the receptionist and asking them to provide you with a Summary of the Medical Records. They may ask you to request this by email, and it may take <strong>up to 28 days</strong> for them to provide the summary."
+        },
+        {
+          "type": "tip",
+          "text": "⏱️ <strong>Tip:</strong> Request your medical records on <strong>Day 1</strong> — this is often the biggest cause of delays!"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 2 — Complete Your Group 2 Medical (DVLA D4 Form)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every new and renewing private hire driver must meet the <strong>Group 2 Medical Standards</strong> set by the DVLA. These are the same standards required for HGV and PCV drivers. This ensures passenger and public safety on the roads."
+        },
+        {
+          "type": "paragraph",
+          "text": "All pages of the attached <strong>DVLA D4 form</strong> must be provided with your application and the medical practitioner will need your full medical records from your GP. If you experience difficulties uploading the medical with the completed D4 form, please submit it separately to <strong>driver.lic@wolverhampton.gov.uk</strong> with your WTP reference. All eight pages of the D4 form must be fully complete, with your date of birth and name appearing on each page."
+        },
+        {
+          "type": "tip",
+          "text": "📌 You can have your medical done by your own GP or a specialist driver medical clinic."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 3 — Apply for Your Enhanced DBS Check"
+        },
+        {
+          "type": "paragraph",
+          "text": "As part of the process for obtaining a private hire licence in Wolverhampton, all applicants must undergo a <strong>Disclosure and Barring Service (DBS) check.</strong> This is designed to ensure that those working in the private hire industry are fit and proper to do so, and helps protect the public by preventing individuals with a history of criminal activity from being granted a licence."
+        },
+        {
+          "type": "paragraph",
+          "text": "You need a <strong>full Enhanced DBS certificate</strong> for the position of <em>\"other workforce – Taxi licensing\"</em> dated <strong>within the last 3 months</strong>, or you must be enrolled on the <strong>DBS Update Service.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "If an applicant has already undergone a DBS check with a different licensing authority, it is important to ensure that the DBS is specific to the private hire industry and is on the Update Service. It must also be valid at the time of application and must <strong>not be more than six months old.</strong> Failing to meet these conditions may result in the DBS being rejected by Wolverhampton and the applicant's licence application being delayed or refused."
+        },
+        {
+          "type": "tip",
+          "text": "⏱️ <strong>How long does a DBS take?</strong> DBS checks are typically processed and mailed to applicants within <strong>4–6 weeks</strong> of the application being submitted. However, due to high demand, it is not uncommon for the process to take longer."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 4 — Complete the Private Hire Driver Training &amp; Assessment Programme"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Private Hire Vehicle Driver's Licence Course is an <strong>essential step</strong> in receiving your Wolverhampton Taxi Badge. The course includes a variety of topics including safeguarding and plying for hire. Applications for a Licence to Drive a Private Hire Vehicle will <strong>only be processed</strong> when an applicant has undertaken the one-day training and assessment course."
+        },
+        {
+          "type": "paragraph",
+          "text": "The course lasts approximately <strong>6 hours</strong> and applicants must sit and pass a written multiple-choice test following the training. A score of <strong>75% or higher</strong> is required to pass. The test can be sat <strong>three times.</strong>"
+        },
+        {
+          "type": "tip",
+          "text": "📌 Satisfactory completion of the Private Hire Driver Training &amp; Assessment Programme is required. You need to pass <strong>within 3 attempts.</strong>"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 5 — Gather All Required Documents"
+        },
+        {
+          "type": "paragraph",
+          "text": "Before submitting your application, make sure you have <strong>all</strong> of the following ready:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "#",
+            "Document",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "1",
+              "Full UK Driving Licence",
+              "Held for minimum 12 months"
+            ],
+            [
+              "2",
+              "DVLA D4 Medical Form",
+              "All 8 pages completed"
+            ],
+            [
+              "3",
+              "Enhanced DBS Certificate",
+              "Dated within last 3 months"
+            ],
+            [
+              "4",
+              "Proof of Right to Work in the UK",
+              "Passport, visa, or biometric residence permit"
+            ],
+            [
+              "5",
+              "Proof of Address",
+              "Within the last 3 months"
+            ],
+            [
+              "6",
+              "Passport-sized Photo",
+              "Recent photo"
+            ],
+            [
+              "7",
+              "Training &amp; Assessment Pass Certificate",
+              "From the one-day course"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Your name must match and be spelt the same way on all your documents. Your application will not continue until you resolve any discrepancies."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 6 — Submit Your Application Online"
+        },
+        {
+          "type": "paragraph",
+          "text": "Apply for your private hire licence <strong>online.</strong> The Council's template is available in the 'Downloads' section of the licensing page."
+        },
+        {
+          "type": "paragraph",
+          "text": "<strong>Where to apply:</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "👉 Go to: <a href=\"https://iapply.co.uk/taxilicensing/driver\" target=\"_blank\" rel=\"noopener\"><strong>iapply.co.uk/taxilicensing/driver</strong></a> <em>(provided on behalf of City of Wolverhampton Council)</em>"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Council will process your application upon receipt of <strong>all correct and complete documents.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "If there are any offences found during the application process, you may receive an invite for a hearing. You can check the Council's Guidelines (in the Downloads section) to assess this. This <strong>may cause delays</strong> with your application."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 7 — Right to Work Verification"
+        },
+        {
+          "type": "paragraph",
+          "text": "Proof of your Right to Work in the UK is required. You must upload an acceptable image of your Right to Work documentation and produce <strong>all original documents for verification</strong> prior to your licence being granted."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🔵 STEP 8 — Await Processing &amp; Receive Your Badge"
+        },
+        {
+          "type": "paragraph",
+          "text": "The time it takes to get your Wolverhampton taxi badge depends on how quickly you complete each stage of the process. On average, you can complete the full licensing process in around <strong>2 to 6 weeks</strong>, although delays may occur if your DBS check, medical appointment, or training sessions take longer to arrange."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can speed up the process by <strong>preparing your documents early</strong> and booking your checks and training as soon as possible, which helps you move through each stage much faster."
+        },
+        {
+          "type": "paragraph",
+          "text": "Once all checks are complete, including your medical, DBS, and safeguarding training, you'll receive your <strong>private hire badge and licence.</strong>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "💰 Driver Licence (Badge) — Fees Summary"
+        },
+        {
+          "type": "paragraph",
+          "text": "The fee schedule for driver licences (2025–2026) is as follows:"
+        },
+        {
+          "type": "paragraph",
+          "text": "- <strong>New Driver Licence (1 year):</strong> £49"
+        },
+        {
+          "type": "paragraph",
+          "text": "- <strong>New Driver Licence (3 years):</strong> £98"
+        },
+        {
+          "type": "paragraph",
+          "text": "- <strong>1-year Renewal:</strong> £39"
+        },
+        {
+          "type": "paragraph",
+          "text": "- <strong>3-year Renewal:</strong> £78"
+        },
+        {
+          "type": "paragraph",
+          "text": "- <strong>Training Programme &amp; Test:</strong> £50"
+        },
+        {
+          "type": "paragraph",
+          "text": "- <strong>Fast Track (New/Renewal):</strong> £100"
+        },
+        {
+          "type": "note",
+          "text": "💡 Additional costs to budget for (not included in council fees):"
+        },
+        {
+          "type": "note",
+          "text": "- Enhanced DBS Check (approx. £38–£50)"
+        },
+        {
+          "type": "note",
+          "text": "- Group 2 Medical Examination (approx. £40–£140 depending on provider)"
+        },
+        {
+          "type": "note",
+          "text": "- GP records request (may vary)"
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ Fees may change annually. Always refer to the <strong>official City of Wolverhampton Council website</strong> or contact them directly for the most up-to-date charges."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "📋 Driver Licence Duration &amp; Renewal"
+        },
+        {
+          "type": "paragraph",
+          "text": "Wolverhampton usually issues a taxi licence for <strong>1 to 3 years</strong>, depending on the council's decision at the time of approval. The expiry date will be shown on your licence, and it <strong>must be renewed before it runs out</strong> to continue working legally as a private hire driver."
+        },
+        {
+          "type": "paragraph",
+          "text": "You should start your renewal around <strong>8–12 weeks before expiry.</strong> This gives enough time for DBS checks, medical updates, and council processing. If your licence expires before renewal is completed, you will <strong>not be able to work</strong> until it is reissued."
+        }
+      ]
+    },
+    {
+      "title": "🚗 PART 2: Private Hire Vehicle Licence (The Plate)",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "✅ Before You Start — Vehicle Eligibility Checklist"
+        },
+        {
+          "type": "paragraph",
+          "text": "Private hire vehicle licences (also known as \"plates\") are required for vehicles used in <strong>pre-booked passenger services.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "The vehicle must be <strong>no older than 11 years and 6 months.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "There are <strong>no age limits on ultra-low emission vehicles.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "Additional vehicle requirements include:"
+        },
+        {
+          "type": "paragraph",
+          "text": "- The vehicle must be in <strong>pristine condition</strong> with no visible defects, dents or blemishes to the external bodywork, internal trim and furnishings."
+        },
+        {
+          "type": "paragraph",
+          "text": "- Any tinted windows need to be <strong>manufacturer fitted only.</strong> The vehicle must have <strong>passenger doors on both sides.</strong>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "📋 Step-by-Step Process — Private Hire Vehicle Licence (Plate)"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🟠 STEP 1 — Confirm Your Vehicle is Eligible"
+        },
+        {
+          "type": "paragraph",
+          "text": "Check that your vehicle meets all of the following before applying:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Requirement",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "<strong>Age</strong>",
+              "No older than 11 years 6 months (no age limit for electric/ultra-low emission vehicles)"
+            ],
+            [
+              "<strong>Condition</strong>",
+              "Pristine — no dents, blemishes, or visible defects"
+            ],
+            [
+              "<strong>Doors</strong>",
+              "Passenger doors on both sides"
+            ],
+            [
+              "<strong>Tinted Windows</strong>",
+              "Manufacturer-fitted only"
+            ],
+            [
+              "<strong>Fuel Type</strong>",
+              "All fuel types accepted; electric vehicles have no age cap"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🟠 STEP 2 — Get a Valid MOT Certificate"
+        },
+        {
+          "type": "paragraph",
+          "text": "You will need an <strong>MOT certificate from an approved test centre, dated within the last 10 days</strong> of your application."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ Do NOT get your MOT too far in advance — it must be dated <strong>within the last 10 days</strong> of application submission."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🟠 STEP 3 — Obtain a Valid Enhanced DBS Certificate"
+        },
+        {
+          "type": "paragraph",
+          "text": "You will need a <strong>DBS certificate dated within the last 12 months</strong>, or you must hold a current Wolverhampton Taxi Driver Licence."
+        },
+        {
+          "type": "note",
+          "text": "If you already hold a valid Wolverhampton Private Hire Driver Badge, your DBS is already on record."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🟠 STEP 4 — Gather All Required Documents"
+        },
+        {
+          "type": "table",
+          "head": [
+            "#",
+            "Document",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "1",
+              "MOT Certificate",
+              "From an approved centre, within last 10 days"
+            ],
+            [
+              "2",
+              "Vehicle V5 Logbook",
+              "Scan <strong>every page</strong>"
+            ],
+            [
+              "3",
+              "Enhanced DBS Certificate",
+              "Dated within last 12 months"
+            ],
+            [
+              "4",
+              "Proof of Purchase (if recently bought)",
+              "Sales receipt acceptable"
+            ],
+            [
+              "5",
+              "Proof of Insurance",
+              "Private hire insurance required"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vehicle V5 document — make sure you <strong>scan every page</strong> — or a sales receipt if you have recently purchased the vehicle."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🟠 STEP 5 — Submit Your Vehicle Licence Application Online"
+        },
+        {
+          "type": "paragraph",
+          "text": "Applications for the vehicle licence plates are done <strong>online.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "<strong>Where to apply:</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "👉 Go to: <a href=\"https://iapply.co.uk/taxilicensing/vehicle\" target=\"_blank\" rel=\"noopener\"><strong>iapply.co.uk/taxilicensing/vehicle</strong></a> <em>(provided on behalf of City of Wolverhampton Council)</em>"
+        },
+        {
+          "type": "paragraph",
+          "text": "If you are unsure of the eligibility of the vehicle to be licensed as a Private Hire vehicle, please contact <strong>vehicle.lic@wolverhampton.gov.uk</strong>"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "🟠 STEP 6 — Await Confirmation &amp; Collect Your Plates"
+        },
+        {
+          "type": "paragraph",
+          "text": "Once your application is done, you will receive an <strong>email within approximately 15 days.</strong> This will tell you where to collect your plates from."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "💰 Vehicle Licence (Plate) — Fees Summary"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Wolverhampton Private Hire Vehicle plates cost <strong>£135.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "text": "The full fee schedule (2025–2026) based on vehicle age:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Vehicle Age",
+            "Licence Type",
+            "Fee"
+          ],
+          "rows": [
+            [
+              "Standard new vehicle licence",
+              "New",
+              "£135"
+            ],
+            [
+              "Over 10 but under 12 years old",
+              "6-month renewal",
+              "£125"
+            ],
+            [
+              "Fast Track (New/Renewal)",
+              "—",
+              "<strong>£180</strong>"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Additional costs to budget for:"
+        },
+        {
+          "type": "note",
+          "text": "- <strong>Private Hire Insurance:</strong> Not part of council fees but <strong>required to operate legally.</strong> Vehicle Compliance Testing is also required before licensing a vehicle."
+        }
+      ]
+    },
+    {
+      "title": "🔁 How Both Licences Work Together — The Full Journey to Working",
+      "content": [
+        {
+          "type": "table",
+          "head": [
+            "Stage",
+            "Action"
+          ],
+          "rows": [
+            [
+              "<strong>1</strong>",
+              "Request GP medical records"
+            ],
+            [
+              "<strong>2</strong>",
+              "Complete Group 2 Medical (D4 Form)"
+            ],
+            [
+              "<strong>3</strong>",
+              "Apply for Enhanced DBS Check"
+            ],
+            [
+              "<strong>4</strong>",
+              "Complete 1-Day Driver Training &amp; Assessment (pass 75%)"
+            ],
+            [
+              "<strong>5</strong>",
+              "Submit Driver Licence (Badge) application online with all documents"
+            ],
+            [
+              "<strong>6</strong>",
+              "Await council approval (2–6 weeks)"
+            ],
+            [
+              "<strong>7</strong>",
+              "Receive your <strong>Private Hire Driver Badge</strong> ✅"
+            ],
+            [
+              "<strong>8</strong>",
+              "Obtain MOT (within 10 days of vehicle application)"
+            ],
+            [
+              "<strong>9</strong>",
+              "Submit Vehicle Licence (Plate) application online with V5/DBS/MOT"
+            ],
+            [
+              "<strong>10</strong>",
+              "Receive email within ~15 days with plate collection details"
+            ],
+            [
+              "<strong>11</strong>",
+              "Collect your <strong>Vehicle Plates</strong> ✅"
+            ],
+            [
+              "<strong>12</strong>",
+              "Register with a licensed private hire operator and <strong>start working!</strong> 🚗"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "❓ Frequently Asked Questions (FAQs)",
+      "content": [
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "📬 Key Contact Details"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Purpose",
+            "Contact"
+          ],
+          "rows": [
+            [
+              "<strong>Driver Licence enquiries</strong>",
+              "driver.lic@wolverhampton.gov.uk"
+            ],
+            [
+              "<strong>Vehicle Licence enquiries</strong>",
+              "vehicle.lic@wolverhampton.gov.uk"
+            ],
+            [
+              "<strong>My Licence Portal issues</strong>",
+              "driver.lic@wolverhampton.gov.uk"
+            ],
+            [
+              "<strong>Main licensing page</strong>",
+              "<a href=\"https://www.wolverhampton.gov.uk/licences/taxi-licences\" target=\"_blank\" rel=\"noopener\">wolverhampton.gov.uk/licences/taxi-licences</a>"
+            ]
+          ]
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ <strong>Disclaimer :</strong> This guide is based on information published by the City of Wolverhampton Council and supporting sources. Fees, requirements and processing times are subject to change. Always verify the latest requirements directly at <a href=\"https://www.wolverhampton.gov.uk/licences/taxi-licences\" target=\"_blank\" rel=\"noopener\">wolverhampton.gov.uk</a> before applying."
+        }
+      ]
+    }
+  ],
   "faqs": [
     {
-      "id": "faq-01",
-      "question": "Can I work as a private hire driver without both licences",
-      "answer": "No A Wolverhampton licensed private hire driver can only drive a Wolverhampton licensed private hire vehicle This licence does not permit the holder to drive a hackney carriage"
+      "id": "gfaq-01",
+      "question": "Can I work as a private hire driver without both licences?",
+      "answer": "No. A Wolverhampton licensed private hire driver can only drive a Wolverhampton licensed private hire vehicle. This licence does not permit the holder to drive a hackney carriage."
     },
     {
-      "id": "faq-02",
-      "question": "Do I need to live in Wolverhampton to apply",
-      "answer": "No Current legislation means private hire drivers can operate anywhere in England and Wales outside of London Wolverhampton licences are accepted nationally by many operators"
+      "id": "gfaq-02",
+      "question": "Do I need to live in Wolverhampton to apply?",
+      "answer": "No. Current legislation means private hire drivers can operate anywhere in England and Wales outside of London. Wolverhampton licences are accepted nationally by many operators."
     },
     {
-      "id": "faq-03",
-      "question": "How long does the full application take",
-      "answer": "The time it takes depends on how quickly you complete each stage On average, you can complete the full licensing process in around **2 to 6 weeks**, although delays may occur if your DBS check, medical appointment, or training sessions take longer to arrange"
+      "id": "gfaq-03",
+      "question": "How long does the full application take?",
+      "answer": "The time it takes depends on how quickly you complete each stage. On average, you can complete the full licensing process in around <strong>2 to 6 weeks</strong>, although delays may occur if your DBS check, medical appointment, or training sessions take longer to arrange."
     },
     {
-      "id": "faq-04",
-      "question": "Can I check the progress of my application",
-      "answer": "Yes You can check the status of your application on the council's online tracking tool The council publishes the date up to which they are currently processing new applications Your application is in the queue and will be dealt with as soon as possible"
+      "id": "gfaq-04",
+      "question": "Can I check the progress of my application?",
+      "answer": "Yes. You can check the status of your application on the council's online tracking tool. The council publishes the date up to which they are currently processing new applications. Your application is in the queue and will be dealt with as soon as possible."
     },
     {
-      "id": "faq-05",
-      "question": "What is the My Licence Portal and what is it for",
-      "answer": "If you hold a current Driver or Vehicle Licence with City of Wolverhampton Council, you can register for the \"My Licence Portal \" You can use the portal to maintain your licence details and notify the council of any amendments and changes You need to register with your email address that is held on file If you have amended your email address, you must notify Licensing Services by emailing **driver lic@wolverhampton gov uk**"
+      "id": "gfaq-05",
+      "question": "What is the My Licence Portal and what is it for?",
+      "answer": "If you hold a current Driver or Vehicle Licence with City of Wolverhampton Council, you can register for the \"My Licence Portal.\" You can use the portal to maintain your licence details and notify the council of any amendments and changes. You need to register with your email address that is held on file.\n\nIf you have amended your email address, you must notify Licensing Services by emailing <strong>driver.lic@wolverhampton.gov.uk</strong>"
     },
     {
-      "id": "faq-06",
-      "question": "What happens if my details change after I get licensed",
-      "answer": "The holder of a private hire driver licence must notify Licensing Services via the My Licence Portal **within 7 days** of any change of their name, address, phone number and/or email address during the period of the licence"
+      "id": "gfaq-06",
+      "question": "What happens if my details change after I get licensed?",
+      "answer": "The holder of a private hire driver licence must notify Licensing Services via the My Licence Portal <strong>within 7 days</strong> of any change of their name, address, phone number and/or email address during the period of the licence."
     },
     {
-      "id": "faq-07",
-      "question": "Can I pick up passengers without a pre-booking",
-      "answer": "No The holder of a private hire licence must not, whilst driving or in charge of a private hire vehicle, take or agree to take a fare without it being pre-booked via a licensed Operator This is known as \"plying for hire\" and can result in licence revocation"
+      "id": "gfaq-07",
+      "question": "Can I pick up passengers without a pre-booking?",
+      "answer": "No. The holder of a private hire licence must not, whilst driving or in charge of a private hire vehicle, take or agree to take a fare without it being pre-booked via a licensed Operator. This is known as \"plying for hire\" and can result in licence revocation."
     },
     {
-      "id": "faq-08",
-      "question": "What if I have convictions on my record",
-      "answer": "If there are any offences found during the application process, you may receive an invite for a hearing You can check the Council's Guidelines (in the Downloads section) to assess this This may cause delays with your application"
+      "id": "gfaq-08",
+      "question": "What if I have convictions on my record?",
+      "answer": "If there are any offences found during the application process, you may receive an invite for a hearing. You can check the Council's Guidelines (in the Downloads section) to assess this. This may cause delays with your application."
     },
     {
-      "id": "faq-09",
-      "question": "When should I renew my driver licence",
-      "answer": "You should start your renewal around **8–12 weeks before expiry ** This gives enough time for DBS checks, medical updates, and council processing"
+      "id": "gfaq-09",
+      "question": "When should I renew my driver licence?",
+      "answer": "You should start your renewal around <strong>8–12 weeks before expiry.</strong> This gives enough time for DBS checks, medical updates, and council processing."
     },
     {
-      "id": "faq-10",
-      "question": "Do I need a medical at renewal",
-      "answer": "When your licence is about to expire, you'll need to go through the renewal process, which also **requires a driver's medical examination if you're aged 45 or older**, or **annually if you're 65 or older **"
+      "id": "gfaq-10",
+      "question": "Do I need a medical at renewal?",
+      "answer": "When your licence is about to expire, you'll need to go through the renewal process, which also <strong>requires a driver's medical examination if you're aged 45 or older</strong>, or <strong>annually if you're 65 or older.</strong>"
     },
     {
-      "id": "faq-11",
-      "question": "What is the NFC badge and can passengers verify me",
-      "answer": "The contactless ID card technology enables passengers, police and other councils to verify the identity of the driver as well as their licence status If passengers are unable to use the NFC function, they can check the driver against the council's online registers"
+      "id": "gfaq-11",
+      "question": "What is the NFC badge and can passengers verify me?",
+      "answer": "The contactless ID card technology enables passengers, police and other councils to verify the identity of the driver as well as their licence status. If passengers are unable to use the NFC function, they can check the driver against the council's online registers."
     },
     {
-      "id": "faq-12",
-      "question": "What does the NR3S register mean for my application",
-      "answer": "The National Register for Revocations, Refusals and Suspensions (NR3S) is checked as part of all new applications If you have had a licence revoked or refused by another authority, this will be flagged during your application"
+      "id": "gfaq-12",
+      "question": "What does the NR3S register mean for my application?",
+      "answer": "The National Register for Revocations, Refusals and Suspensions (NR3S) is checked as part of all new applications. If you have had a licence revoked or refused by another authority, this will be flagged during your application."
     }
   ]
 }

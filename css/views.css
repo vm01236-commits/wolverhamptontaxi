@@ -878,3 +878,1670 @@ input:checked + .toggle-slider:before {
         gap: 8px;
     }
 }
+
+/* ============================================================
+   UI FIXES & ENHANCEMENTS
+   ============================================================ */
+
+/* --- Question type badges ------------------------------------ */
+.question-type-badge.multi-choice {
+    background: var(--purple-tint);
+    color: var(--purple);
+}
+
+/* Preserve line breaks inside question text (True/False
+   questions embed a "Proposed answer:" line) */
+.question-text {
+    white-space: pre-line;
+}
+
+/* --- Button variants used by the exam runner ------------------ */
+.btn-neutral {
+    background: var(--card);
+    color: var(--navy);
+    border: 2px solid var(--navy);
+}
+
+.btn-neutral:hover {
+    background: var(--hover-tint);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--navy);
+    background: var(--hover-tint);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: var(--green);
+    color: var(--on-accent);
+    box-shadow: 0 6px 18px rgba(22, 163, 74, 0.35);
+}
+
+.btn-success:hover {
+    filter: brightness(0.94);
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: var(--amber);
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    filter: brightness(0.94);
+}
+
+.btn-error {
+    background: var(--red-dark);
+    color: #ffffff;
+}
+
+.btn:focus-visible,
+.option-label:focus-visible,
+.bookmark-btn:focus-visible {
+    outline: 3px solid var(--navy-2);
+    outline-offset: 2px;
+}
+
+[data-theme='dark'] .btn-warning {
+    color: #1a1a1a;
+}
+
+/* --- Bookmark button on question cards ------------------------ */
+.exam-question {
+    position: relative;
+}
+
+.exam-question-header .question-number {
+    margin-right: 10px;
+}
+
+.exam-question-header .question-type-badge {
+    margin-right: auto;
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease,
+        background 0.2s ease, transform 0.15s ease;
+}
+
+.bookmark-btn:hover {
+    color: var(--navy);
+    border-color: var(--navy);
+    background: var(--hover-tint);
+    transform: scale(1.06);
+}
+
+.bookmark-btn.bookmarked {
+    color: var(--amber);
+    border-color: var(--amber);
+    background: var(--tint-amber-soft);
+}
+
+@media (max-width: 640px) {
+    .bookmark-btn {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* --- Instant feedback panel (explanation per question) -------- */
+.exam-feedback {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    animation: feedbackIn 0.25s ease;
+}
+
+@keyframes feedbackIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.exam-feedback.feedback-correct {
+    background: var(--tint-green-soft);
+    border-color: var(--border-green);
+}
+
+.exam-feedback.feedback-incorrect {
+    background: var(--tint-red-soft);
+    border-color: var(--border-red);
+}
+
+.feedback-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.feedback-correct .feedback-head {
+    color: var(--on-green);
+}
+
+.feedback-incorrect .feedback-head {
+    color: var(--on-red);
+}
+
+.feedback-answer {
+    margin-top: 6px;
+    font-size: 0.92rem;
+    color: var(--text);
+}
+
+.feedback-explanation {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Modern dashboard progress ring --------------------------- */
+.progress-ring-wrap {
+    width: 190px;
+    margin: 0 auto;
+}
+
+.progress-ring {
+    overflow: visible;
+}
+
+.ring-bg {
+    stroke-width: 3.4;
+}
+
+.ring-fg {
+    stroke: url(#ringGradient);
+    stroke-width: 3.4;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    filter: drop-shadow(0 0 6px rgba(30, 58, 138, 0.25));
+}
+
+[data-theme='dark'] .ring-fg {
+    filter: drop-shadow(0 0 8px rgba(169, 190, 255, 0.35));
+}
+
+/* --- Application guide tables & subheadings ------------------- */
+.guide-section h3.guide-subheading {
+    margin: 28px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--hover-tint-strong);
+    color: var(--navy);
+    font-size: 1.15rem;
+}
+
+.guide-section h4.guide-subheading {
+    margin: 20px 0 8px;
+    color: var(--navy-2);
+    font-size: 1rem;
+}
+
+.guide-table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+.guide-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.92rem;
+}
+
+.guide-table th,
+.guide-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.55;
+}
+
+.guide-table th {
+    background: var(--navy);
+    color: var(--on-accent);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.guide-table tbody tr:nth-child(even) {
+    background: var(--hover-tint);
+}
+
+.guide-table tbody tr:hover {
+    background: var(--hover-tint-strong);
+}
+
+.guide-table-wrap::-webkit-scrollbar {
+    height: 8px;
+}
+
+.guide-table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+.ring-value {
+    font-size: 2rem;
+}
+
+.feedback-explanation p {
+    font-size: 0.93rem;
+    line-height: 1.65;
+    color: var(--text);
+}
+
+.feedback-explanation i {
+    color: var(--amber);
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .bookmark-btn {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.btn-error:hover {
+    filter: brightness(0.94);
+}
+
+/* ============================================================
+   EXAM RUNNER — test screen (Life-in-UK style layout)
+   Top bar (title + timer pill) → answered-progress → two-column
+   body (navigator sidebar + question card) → controls row →
+   per-question timer card. Sidebar is always visible on desktop
+   and collapses into a drawer under 900px.
+   ============================================================ */
+
+#view-exam-runner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 20px 70px;
+}
+
+body.focus-mode .disclaimer-banner {
+    display: none;
+}
+
+/* --- Top bar: title block left, big timer pill right ---------- */
+.runner-topbar {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.runner-exam-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.runner-exam-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.2;
+}
+
+.runner-question-count {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.timer {
+    flex-shrink: 0;
+    background: var(--card);
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    box-shadow: var(--shadow-md);
+}
+
+.timer-warn { color: var(--amber); }
+.timer-danger { color: var(--red); }
+
+.timer-untimed {
+    font-size: 1rem;
+    padding: 14px 20px;
+    color: var(--text-muted);
+}
+
+.runner-drawer-btn {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Answered progress ---------------------------------------- */
+.answer-progress {
+    margin-bottom: 8px;
+}
+
+.answer-progress-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.answer-progress-pct {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.answer-progress-track {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--tint-neutral);
+    overflow: hidden;
+}
+
+.answer-progress-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--red-dark), var(--red));
+    transition: width 0.3s ease;
+}
+
+/* Thin elapsed-time pace line under the progress bar */
+.runner-pace-bar {
+    height: 4px;
+    border-radius: 999px;
+    background: var(--tint-neutral);
+    overflow: hidden;
+    margin: 10px 0 26px;
+}
+
+.runner-pace-fill {
+    height: 100%;
+    width: 0;
+    background: var(--navy-2);
+    opacity: 0.45;
+    transition: width 0.5s linear;
+}
+
+/* --- Body grid: navigator sidebar + main column --------------- */
+.runner-body {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.runner-main {
+    min-width: 0;
+}
+
+.runner-sidebar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 96px;
+}
+
+.runner-sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.runner-nav-title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.drawer-close {
+    display: none;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: var(--tint-neutral);
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Numbered question grid (6 per row, like the reference design) */
+.runner-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 9px;
+}
+
+.nav-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.12s ease,
+        border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.nav-cell:hover {
+    border-color: var(--navy-2);
+    transform: translateY(-1px);
+}
+
+.nav-cell.answered {
+    background: var(--tint-navy);
+    border-color: transparent;
+}
+
+.nav-cell.correct {
+    background: var(--green);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.nav-cell.wrong {
+    background: var(--red);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+/* Current question wins over answered/correct styling */
+.nav-cell.current {
+    background: var(--navy);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 30, 61, 0.35);
+}
+
+[data-theme='dark'] .nav-cell.current { color: #101a36; }
+[data-theme='dark'] .nav-cell.correct { color: #0b3d20; }
+[data-theme='dark'] .nav-cell.wrong { color: #42070f; }
+
+/* Legend under the grid */
+.runner-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 18px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    background: var(--tint-neutral);
+    flex-shrink: 0;
+}
+
+.legend-dot.current { background: var(--navy); }
+.legend-dot.answered {
+    background: var(--tint-navy);
+    border: 1px solid var(--border-navy);
+}
+.legend-dot.correct { background: var(--green); }
+.legend-dot.wrong { background: var(--red); }
+
+.btn-block {
+    width: 100%;
+}
+
+/* --- Question card --------------------------------------------- */
+.question-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.question-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.question-top-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.question-position {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.question-type-badge {
+    background: var(--tint-navy);
+    color: var(--on-navy-tint);
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Text-style bookmark link, top-right of the card */
+.question-top .bookmark-btn {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.question-top .bookmark-btn:hover {
+    color: var(--navy-2);
+    background: var(--hover-tint);
+    transform: none;
+}
+
+.question-top .bookmark-btn.active {
+    color: var(--amber);
+}
+
+.question-text {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--text);
+    margin: 0 0 16px;
+}
+
+/* "Select 2 answers." pill */
+.question-hint {
+    display: inline-block;
+    background: var(--tint-amber);
+    color: var(--on-amber);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 10px;
+    margin: 0 0 20px;
+}
+
+/* --- Answer options -------------------------------------------- */
+.option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option-item:hover {
+    border-color: var(--navy-3);
+}
+
+.option-item.is-selected {
+    border-color: var(--navy-2);
+    background: var(--tint-navy-soft);
+}
+
+.option-item input {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--red);
+    cursor: pointer;
+}
+
+.option-item input:disabled {
+    cursor: default;
+}
+
+.option-letter {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--tint-neutral);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.option-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.option-item.correct {
+    border-color: var(--border-green);
+    background: var(--tint-green-soft);
+}
+.option-item.correct .option-letter {
+    background: var(--green);
+    color: #ffffff;
+}
+
+.option-item.wrong {
+    border-color: var(--border-red);
+    background: var(--tint-red-soft);
+}
+.option-item.wrong .option-letter {
+    background: var(--red);
+    color: #ffffff;
+}
+
+.option-item.dimmed {
+    opacity: 0.55;
+}
+
+.result-icon {
+    margin-left: auto;
+    font-size: 1.1rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+.result-icon.correct { color: var(--green); }
+.result-icon.wrong { color: var(--red); }
+
+/* True/False buttons */
+.boolean-options {
+    display: flex;
+    gap: 14px;
+}
+
+.bool-btn {
+    flex: 1;
+    padding: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.bool-btn:hover { border-color: var(--navy-3); }
+.bool-btn.selected {
+    border-color: var(--navy-2);
+    background: var(--tint-navy-soft);
+}
+.bool-btn.correct {
+    border-color: var(--border-green);
+    background: var(--tint-green-soft);
+    color: var(--on-green);
+}
+.bool-btn.wrong {
+    border-color: var(--border-red);
+    background: var(--tint-red-soft);
+    color: var(--on-red);
+}
+.bool-btn.dimmed { opacity: 0.55; }
+.bool-btn:disabled { cursor: default; }
+
+/* Instant-feedback explanation card */
+.explanation-card {
+    margin-top: 20px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    font-size: 0.93rem;
+}
+
+.explanation-card p {
+    margin: 6px 0 0;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.explain-correct {
+    background: var(--tint-green-soft);
+    border: 1px solid var(--border-green);
+}
+.explain-correct strong { color: var(--on-green); }
+
+.explain-wrong {
+    background: var(--tint-red-soft);
+    border: 1px solid var(--border-red);
+}
+.explain-wrong strong { color: var(--on-red); }
+
+/* "Check Answer" row — right-aligned, like the reference design */
+.question-check-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.question-check-row .btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.check-hint {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Footer: Previous / Finish / Next + per-question timer ----- */
+.runner-footer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.runner-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.runner-controls .btn {
+    min-width: 130px;
+    justify-content: center;
+}
+
+/* "Time on this question" card */
+.qtimer {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.qtimer.is-over {
+    border-color: var(--border-red);
+}
+
+.qtimer-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.qtimer-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qtimer-value {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--red);
+    font-variant-numeric: tabular-nums;
+}
+
+.qtimer-track {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--tint-neutral);
+    overflow: hidden;
+}
+
+.qtimer-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    transition: width 0.5s linear;
+}
+
+.qtimer-fill.tone-ok { background: var(--navy-2); }
+.qtimer-fill.tone-warn { background: var(--amber); }
+.qtimer-fill.tone-over { background: var(--red); }
+
+.qtimer-hint {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.qtimer-hint.tone-warn {
+    color: var(--on-amber);
+    font-weight: 600;
+}
+
+.qtimer-hint.tone-over {
+    color: var(--on-red);
+    font-weight: 700;
+}
+
+/* --- Mobile drawer backdrop ------------------------------------ */
+.runner-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+body.drawer-open .runner-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --- Responsive: sidebar collapses into a drawer < 900px ------- */
+@media (max-width: 900px) {
+    .runner-drawer-btn {
+        display: inline-flex;
+    }
+
+    .runner-body {
+        grid-template-columns: 1fr;
+    }
+
+    .runner-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+        width: min(320px, 85vw);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        overflow-y: auto;
+        transform: translateX(-105%);
+        transition: transform 0.25s ease;
+        box-shadow: var(--shadow-lg);
+    }
+
+    body.drawer-open .runner-sidebar {
+        transform: none;
+    }
+
+    .drawer-close {
+        display: flex;
+    }
+
+    .runner-exam-title {
+        font-size: 1.3rem;
+    }
+
+    .timer {
+        font-size: 1.2rem;
+        padding: 10px 18px;
+    }
+
+    .question-card {
+        padding: 20px;
+    }
+
+    .question-text {
+        font-size: 1.15rem;
+    }
+
+    .question-check-row {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .runner-controls {
+        flex-wrap: wrap;
+    }
+
+    .runner-controls .btn {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .boolean-options {
+        flex-direction: column;
+    }
+}
+
+/* ============================================================
+   MOCK TESTS PAGE — tiered sections + test cards
+   (Foundation / Intermediate / Advanced groups, 3-column grid)
+   ============================================================ */
+
+.mocks-container {
+    display: block;
+}
+
+.mock-section {
+    margin-bottom: 38px;
+}
+
+.mock-section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.mock-section-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.mock-section-dot.tier-foundation { background: var(--green); }
+.mock-section-dot.tier-intermediate { background: var(--amber); }
+.mock-section-dot.tier-advanced { background: var(--red); }
+
+.mock-section-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.mock-section-count {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.mock-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.mock-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mock-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.mock-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.mock-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* Tier badge — green / amber / red tint per difficulty */
+.mock-tier {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.mock-tier.tier-foundation {
+    background: var(--tint-green);
+    color: var(--on-green);
+}
+
+.mock-tier.tier-intermediate {
+    background: var(--tint-amber);
+    color: var(--on-amber);
+}
+
+.mock-tier.tier-advanced {
+    background: var(--tint-red);
+    color: var(--on-red);
+}
+
+.mock-title {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.mock-meta-line {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.mock-best {
+    margin: 10px 0 0;
+    color: var(--on-green);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.mock-card-footer {
+    margin-top: auto;
+    padding-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Status pill — grey for untouched, navy tint for in-progress */
+.mock-status {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--tint-neutral);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.mock-status.in-progress {
+    background: var(--tint-navy);
+    color: var(--on-navy-tint);
+}
+
+.btn-start {
+    padding: 10px 26px;
+}
+
+@media (max-width: 1024px) {
+    .mock-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .mock-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mock-card-footer {
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================================================
+   RESULTS PAGE — score card, topic breakdown, answer review
+   ============================================================ */
+
+.results-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 20px 70px;
+}
+
+.results-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 36px;
+}
+
+.results-side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.panel-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.panel-title {
+    margin: 0 0 18px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.panel-empty {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* --- Score card (left column) --------------------------------- */
+.score-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--red);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+}
+
+.score-card.passed {
+    border-top-color: var(--green);
+}
+
+.score-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.score-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.score-badge {
+    padding: 5px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.score-badge.fail {
+    background: var(--tint-red);
+    color: var(--on-red);
+}
+
+.score-badge.pass {
+    background: var(--tint-green);
+    color: var(--on-green);
+}
+
+/* Ring */
+.score-ring-wrap {
+    position: relative;
+    width: 190px;
+    margin: 12px auto 18px;
+}
+
+.score-ring {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.score-ring-track {
+    fill: none;
+    stroke: var(--tint-neutral);
+    stroke-width: 10;
+}
+
+.score-ring-fill {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.score-ring-fill.tone-fail { stroke: var(--red); }
+.score-ring-fill.tone-pass { stroke: var(--green); }
+
+.score-ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.score-ring-pct {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+}
+
+.score-ring-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+}
+
+.score-message {
+    text-align: center;
+    color: var(--text);
+    font-size: 0.95rem;
+    margin: 0 0 22px;
+}
+
+.score-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.score-stat {
+    background: var(--tint-neutral);
+    border-radius: 12px;
+    padding: 14px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.score-stat-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+}
+
+.score-stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.score-date {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0 0 22px;
+}
+
+.score-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-delete {
+    background: var(--red-dark);
+    color: #ffffff;
+}
+
+.btn-delete:hover {
+    filter: brightness(0.92);
+}
+
+/* --- Topic Breakdown ------------------------------------------- */
+.topic-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 170px) 1fr 44px 38px;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+}
+
+.topic-name {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.topic-track {
+    display: block;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--tint-neutral);
+    overflow: hidden;
+}
+
+.topic-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.5s ease;
+}
+
+.topic-fill.band-good { background: var(--green); }
+.topic-fill.band-mid { background: var(--amber); }
+.topic-fill.band-bad { background: var(--red); }
+
+.topic-pct {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.topic-pct.band-good { color: var(--on-green); }
+.topic-pct.band-mid { color: var(--on-amber); }
+.topic-pct.band-bad { color: var(--on-red); }
+
+.topic-count {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* --- Correct vs Incorrect bar chart ---------------------------- */
+.cvb-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 20px;
+    height: 190px;
+    padding-top: 10px;
+}
+
+.cvb-col {
+    flex: 1;
+    max-width: 90px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.cvb-bar {
+    width: 46px;
+    border-radius: 8px 8px 4px 4px;
+}
+
+.cvb-bar.cvb-correct { background: var(--green); }
+.cvb-bar.cvb-incorrect { background: var(--red); }
+.cvb-bar.cvb-skipped { background: var(--tint-neutral); border: 1px solid var(--border); }
+
+.cvb-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* --- Answer Review --------------------------------------------- */
+.review-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.review-head .section-title {
+    margin: 0;
+}
+
+.review-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text-muted);
+    border-radius: 999px;
+    padding: 7px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-pill:hover {
+    border-color: var(--navy-2);
+    color: var(--text);
+}
+
+.filter-pill.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #ffffff;
+}
+
+[data-theme='dark'] .filter-pill.active {
+    color: #101a36;
+}
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.review-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.review-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.review-qnum {
+    font-weight: 800;
+    font-size: 0.92rem;
+    color: var(--text);
+}
+
+.review-pill {
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.review-pill.correct {
+    background: var(--tint-green);
+    color: var(--on-green);
+}
+
+.review-pill.incorrect {
+    background: var(--tint-red);
+    color: var(--on-red);
+}
+
+.review-pill.skipped {
+    background: var(--tint-neutral);
+    color: var(--text-muted);
+}
+
+.review-question {
+    margin: 0 0 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+.review-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.review-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.review-option.is-correct {
+    border-color: var(--border-green);
+    background: var(--tint-green-soft);
+}
+
+.review-option.is-wrong {
+    border-color: var(--border-red);
+    background: var(--tint-red-soft);
+}
+
+.review-option-text {
+    flex: 1;
+    line-height: 1.45;
+}
+
+.review-mark {
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.review-mark.mark-correct { color: var(--green); }
+.review-mark.mark-wrong { color: var(--red); }
+
+.review-explanation {
+    background: var(--tint-neutral);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* --- Responsive ------------------------------------------------- */
+@media (max-width: 900px) {
+    .results-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .score-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .score-actions .btn {
+        width: 100%;
+    }
+
+    .topic-row {
+        grid-template-columns: minmax(90px, 1fr) 1fr 40px 34px;
+        gap: 8px;
+    }
+}

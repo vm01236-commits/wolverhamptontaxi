@@ -98,11 +98,38 @@ export function saveResult(result, type, category = null, mockId = null) {
 }
 
 /**
- * Get exam history from localStorage
+ * Get exam history from localStorage.
+ *
+ * Attempts are saved in TWO places: the practice/mock views write to
+ * 'wt-history' via saveResult(), while the exam runner writes raw
+ * result objects to 'wt-results' via storage.addResult(). Merge both
+ * stores and normalise the 'wt-results' schema (where `score` holds a
+ * percentage) into the history schema (where `score` is a count).
  * @returns {Array} Array of history items
  */
 export function getHistory() {
-    return JSON.parse(localStorage.getItem('wt-history') || '[]');
+    const legacy = JSON.parse(localStorage.getItem('wt-history') || '[]');
+
+    const stored = JSON.parse(localStorage.getItem('wt-results') || '[]');
+    const normalized = stored.map(r => {
+        const total = r.total ?? 0;
+        const percent = typeof r.score === 'number' ? r.score
+            : total > 0 ? Math.round(((r.correct ?? 0) / total) * 100) : 0;
+        return {
+            id: r.id,
+            timestamp: r.date ? new Date(r.date).toISOString() : new Date().toISOString(),
+            type: (r.mode && r.mode !== 'exam') ? 'practice' : 'mock',
+            category: r.category ?? null,
+            mockId: r.examId ?? null,
+            score: typeof r.correct === 'number' ? r.correct : Math.round((percent / 100) * total),
+            total,
+            percent,
+            passed: !!r.passed,
+            answers: Array.isArray(r.questions) ? r.questions : []
+        };
+    });
+
+    return [...legacy, ...normalized];
 }
 
 /**
@@ -110,6 +137,7 @@ export function getHistory() {
  */
 export function clearHistory() {
     localStorage.removeItem('wt-history');
+    localStorage.removeItem('wt-results');
 }
 
 /**
@@ -226,7 +254,7 @@ export function exportResultsToCSV(history) {
 export function importResultsFromCSV(csvData) {
     // This would be implemented in a future version
     // For now, just return false to indicate not implemented
-    console.warn('CSV import not yet implemented');
+    console.log('CSV import not yet implemented');
     return false;
 }
 

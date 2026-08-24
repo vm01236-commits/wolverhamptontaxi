@@ -24,7 +24,7 @@ function enhanceFormLabels() {
         const id = element.id;
         if (!id) {
             // Generate an ID if none exists
-            const newId = `${element.type}-${Math.random().toString(36).substr(2, 9)}`;
+            const newId = `${element.type}-${Math.random().toString(36).substring(2, 11)}`;
             element.id = newId;
         }
 

@@ -12,9 +12,9 @@ export function init(container) {
         <div class="dashboard-view">
             <!-- Hero Section -->
             <section class="hero">
-                <div class="hero-pattern"></div>
+                <div class="hero-pattern" aria-hidden="true"></div>
                 <div class="hero-content">
-                    <div class="hero-badge">Official Practice App</div>
+                    <span class="hero-badge">Official Practice App</span>
                     <h1 class="hero-title">Prepare for your <span class="hero-highlight">Wolverhampton Taxi Knowledge Test</span></h1>
                     <p class="hero-subtitle">
                         Comprehensive practice materials including mock tests, topic-based practice, and progress tracking to help you succeed on your licensing exam.
@@ -37,94 +37,49 @@ export function init(container) {
             <!-- Progress Section -->
             <section class="progress-section">
                 <div class="progress-card">
-                    <h3 class="section-title center">Your Progress</h3>
+                    <h2 class="section-title">Your Progress</h2>
                     <div class="progress-ring-wrap">
-                        <svg class="progress-ring" viewBox="0 0 36 36">
-                            <circle class="ring-bg" cx="18" cy="18" r="15.5" fill="none" stroke-width="2"/>
-                            <circle class="ring-fg" cx="18" cy="18" r="15.5" fill="none" stroke-width="2"/>
-                            <g class="ring-center">
-                                <text class="ring-value" x="18" y="20.5" text-anchor="middle" fill="var(--navy)">0%</text>
-                                <text class="ring-label" x="18" y="26.5" text-anchor="middle">Questions</text>
-                            </g>
+                        <svg class="progress-ring" viewBox="0 0 120 120">
+                            <circle class="ring-bg" cx="60" cy="60" r="52" />
+                            <circle class="ring-fg" cx="60" cy="60" r="52" />
                         </svg>
+                        <div class="ring-center">
+                            <span class="ring-value" id="ringValue">0%</span>
+                            <span class="ring-label">overall</span>
+                        </div>
                     </div>
                     <ul class="progress-stats">
-                        <li>
-                            <span class="p-label">Answered</span>
-                            <span class="p-value" id="answeredCount">0</span>
-                        </li>
-                        <li>
-                            <span class="p-label">Correct</span>
-                            <span class="p-value" id="correctCount">0</span>
-                        </li>
+                        <li><span class="p-label">Answered</span><span class="p-value" id="answeredCount">0</span></li>
+                        <li><span class="p-label">Correct</span><span class="p-value" id="correctCount">0</span></li>
+                        <li><span class="p-label">Mock Tests</span><span class="p-value" id="mockTestsCount">0</span></li>
+                        <li><span class="p-label">Bookmarks</span><span class="p-value" id="bookmarksCount">0</span></li>
                     </ul>
                 </div>
 
                 <div class="quick-card">
-                    <h3 class="section-title center">Quick Actions</h3>
-                    <div class="quick-item">
-                        <div class="quick-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <div class="quick-text">
-                            <div class="quick-title">Application Guide</div>
-                            <div class="quick-sub">Read the official guide</div>
-                        </div>
-                    </div>
-                    <div class="quick-item">
-                        <div class="quick-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="quick-text">
-                            <div class="quick-title">Bookmarks</div>
-                            <div class="quick-sub">Review saved questions</div>
-                        </div>
-                    </div>
-                    <div class="quick-item">
-                        <div class="quick-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <div class="quick-text">
-                            <div class="quick-title">Weak Areas</div>
-                            <div class="quick-sub">Focus your study</div>
-                        </div>
-                    </div>
-                    <div class="quick-item">
-                        <div class="quick-icon">
-                            <i class="fas fa-cog"></i>
-                        </div>
-                        <div class="quick-text">
-                            <div class="quick-title">Settings</div>
-                            <div class="quick-sub">Customize your experience</div>
-                        </div>
-                    </div>
+                    <h2 class="section-title">Quick Actions</h2>
+                    <div id="quickActions"></div>
                 </div>
             </section>
 
             <!-- Features -->
             <section class="features">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>Official Content</h3>
-                    <p>All questions based on the official Wolverhampton Taxi Driver Handbook</p>
+                    <span class="feature-icon">📖</span>
+                    <h3>Study</h3>
+                    <p>5 chapters with search, progress tracking and bookmarks.</p>
                     <a href="#guide" class="feature-link" data-view="guide">View Guide</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Realistic Practice</h3>
-                    <p>Mock tests simulate the actual exam format and timing</p>
+                    <span class="feature-icon">🧪</span>
+                    <h3>Practice</h3>
+                    <p>17 timed tests with 3 question types and instant feedback.</p>
                     <a href="#exams" class="feature-link" data-view="exams">Try a Mock Test</a>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Track Progress</h3>
-                    <p>Monitor your improvement with detailed statistics</p>
+                    <span class="feature-icon">📊</span>
+                    <h3>Track</h3>
+                    <p>Results, charts, history and answer review to improve.</p>
                     <a href="#history" class="feature-link" data-view="history">View History</a>
                 </div>
             </section>
@@ -182,59 +137,74 @@ function populateStatsStrip(questions, mocksIndex, guide, faqs) {
 
     statsStrip.innerHTML = `
         <div class="stat-card">
-            <div class="stat-icon">
-                <i class="fas fa-question-circle"></i>
-            </div>
+            <span class="stat-icon">⏱</span>
             <div class="stat-info">
-                <div class="stat-value">${questions.length}</div>
-                <div class="stat-label">Total Questions</div>
+                <span class="stat-value">40</span>
+                <span class="stat-label">min per test</span>
             </div>
         </div>
         <div class="stat-card">
-            <div class="stat-icon">
-                <i class="fas fa-list-ol"></i>
-            </div>
+            <span class="stat-icon">📚</span>
             <div class="stat-info">
-                <div class="stat-value">${mocksIndex.mockTests.length}</div>
-                <div class="stat-label">Mock Tests</div>
+                <span class="stat-value">7</span>
+                <span class="stat-label">categories</span>
             </div>
         </div>
         <div class="stat-card">
-            <div class="stat-icon">
-                <i class="fas fa-book"></i>
-            </div>
+            <span class="stat-icon">🧪</span>
             <div class="stat-info">
-                <div class="stat-value">1</div>
-                <div class="stat-label">Application Guide</div>
+                <span class="stat-value">${mocksIndex.mockTests.length}</span>
+                <span class="stat-label">mock tests</span>
             </div>
         </div>
         <div class="stat-card">
-            <div class="stat-icon">
-                <i class="fas fa-comments"></i>
-            </div>
+            <span class="stat-icon">✅</span>
             <div class="stat-info">
-                <div class="stat-value">${faqs.length}</div>
-                <div class="stat-label">FAQs</div>
+                <span class="stat-value">75%</span>
+                <span class="stat-label">pass mark</span>
             </div>
         </div>
     `;
 }
 
 function populateProgressRing() {
-    // This would typically come from user's history/localStorage
-    // For now, placeholder data
-    const ringValue = document.querySelector('.ring-value');
-    const ringFg = document.querySelector('.ring-fg');
+    // Real progress: overall accuracy across every saved attempt
+    const history = resultsModule.getHistory();
+    const totals = history.reduce(
+        (acc, h) => ({ answered: acc.answered + (h.total || 0), correct: acc.correct + (h.score || 0) }),
+        { answered: 0, correct: 0 }
+    );
+    const progressPercent = totals.answered > 0
+        ? Math.round((totals.correct / totals.answered) * 100)
+        : 0;
 
-    // Example: 42% progress
-    const progressPercent = 42;
+    const ringValue = document.getElementById('ringValue');
+    const ringFg = document.querySelector('.ring-fg');
+    const answeredEl = document.getElementById('answeredCount');
+    const correctEl = document.getElementById('correctCount');
+    const mockTestsEl = document.getElementById('mockTestsCount');
+    const bookmarksEl = document.getElementById('bookmarksCount');
+
+    if (!ringValue || !ringFg) return;
+    if (answeredEl) answeredEl.textContent = totals.answered;
+    if (correctEl) correctEl.textContent = totals.correct;
+    if (mockTestsEl) mockTestsEl.textContent = history.length; // Number of attempts
+    if (bookmarksEl) bookmarksEl.textContent = bookmarksModule.getBookmarkCount(); // Number of bookmarks
+
     ringValue.textContent = `${progressPercent}%`;
 
-    // Calculate stroke dashed offset for progress ring
-    // Circumference = 2 * π * r = 2 * 3.14159 * 15.5 ≈ 97.3
-    const circumference = 97.3;
-    const offset = circumference - (progressPercent / 100) * circumference;
-    ringFg.style.strokeDashoffset = offset;
+    // Animate the arc drawing in
+    const circumference = 2 * Math.PI * 52; // r = 52 -> ~326.73
+    ringFg.style.strokeDasharray = circumference.toFixed(2);
+    ringFg.style.strokeDashoffset = circumference.toFixed(2);
+    const targetOffset =
+        circumference - (Math.min(100, Math.max(0, progressPercent)) / 100) * circumference;
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            ringFg.style.strokeDashoffset = targetOffset.toFixed(2);
+        });
+    });
 }
 
 function populateLevelsGrid(questions) {

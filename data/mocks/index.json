@@ -2,23 +2,43 @@
   "mockTests": [
     {
       "id": "mock-1",
-      "title": "Mock Test 1"
+      "title": "Mock Test 1",
+      "difficulty": "foundation",
+      "totalQuestions": 28,
+      "timeLimitMinutes": 40,
+      "passMarkPercent": 75
     },
     {
       "id": "mock-2",
-      "title": "Mock Test 2"
+      "title": "Mock Test 2",
+      "difficulty": "foundation",
+      "totalQuestions": 28,
+      "timeLimitMinutes": 40,
+      "passMarkPercent": 75
     },
     {
       "id": "mock-3",
-      "title": "Mock Test 3"
+      "title": "Mock Test 3",
+      "difficulty": "intermediate",
+      "totalQuestions": 28,
+      "timeLimitMinutes": 40,
+      "passMarkPercent": 75
     },
     {
       "id": "mock-4",
-      "title": "Mock Test 4"
+      "title": "Mock Test 4",
+      "difficulty": "intermediate",
+      "totalQuestions": 28,
+      "timeLimitMinutes": 40,
+      "passMarkPercent": 75
     },
     {
       "id": "mock-5",
-      "title": "Mock Test 5"
+      "title": "Mock Test 5",
+      "difficulty": "advanced",
+      "totalQuestions": 28,
+      "timeLimitMinutes": 40,
+      "passMarkPercent": 75
     }
   ]
 }

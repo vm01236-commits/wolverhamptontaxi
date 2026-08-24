@@ -3,7 +3,10 @@
 // ============================================================
 
 import { resultsModule } from '../results.js';
-import { examRunner } from '../examRunner.js';
+import { bookmarksModule } from '../bookmarks.js';
+
+// Active practice session (module-scope so inline onclick handlers can drive it)
+let currentPractice = null;
 
 export function init(container) {
     // Load practice view content
@@ -190,7 +193,7 @@ function initPracticeRunner(questions, topic) {
                 </div>
                 <div class="practice-stats">
                     <span>Question <span id="practiceCurrentQuestion">1</span> of <span id="practiceTotalQuestions">${questions.length}</span></span>
-                    <span>Correct: <span id="practiceCorrectCount">0</span></span>
+                    <span>Answered: <span id="practiceCorrectCount">0</span></span>
                 </div>
             </div>
 
@@ -201,7 +204,7 @@ function initPracticeRunner(questions, topic) {
 
             <!-- Practice Actions -->
             <div class="practice-actions">
-                <button class="btn btn-secondary" id="practicePrevBtn" onclick="navigatePracticeQuestion(-1)">
+                <button class="btn btn-neutral" id="practicePrevBtn" onclick="navigatePracticeQuestion(-1)">
                     <i class="fas fa-arrow-left"></i> Previous
                 </button>
                 <button class="btn btn-primary" id="practiceNextBtn" onclick="navigatePracticeQuestion(1)">
@@ -222,6 +225,7 @@ function initPracticeRunner(questions, topic) {
         startTime: Date.now(),
         topic: topic
     };
+    currentPractice = practiceState;
 
     // Load first question
     loadPracticeQuestion(practiceState);
@@ -233,6 +237,7 @@ function initPracticeRunner(questions, topic) {
 function loadPracticeQuestion(state) {
     const container = document.getElementById('practiceQuestionContainer');
     const question = state.questions[state.currentIndex];
+    const answered = state.answers[state.currentIndex] || [];
 
     // Update progress
     document.getElementById('practiceCurrentQuestion').textContent = state.currentIndex + 1;
@@ -244,15 +249,28 @@ function loadPracticeQuestion(state) {
     const progressPercent = ((state.currentIndex + 1) / state.questions.length) * 100;
     document.getElementById('practiceProgressFill').style.width = progressPercent + '%';
 
+    // Instant feedback: reveal correctness + explanation once answered
+    const showFeedback = answered.length > 0;
+    const isCorrect = showFeedback && examAnswerMatches(answered, question.correctIndexes);
+
+    // Bookmark state for this question
+    const bookmarked = bookmarksModule.isBookmarked(question.id);
+
     // Render question
     container.innerHTML = `
         <div class="exam-question-header">
             <div class="question-number">${state.currentIndex + 1}</div>
             <div class="question-type-badge ${question.type}">
-                ${question.type === 'single-choice' ? 'Single Choice' :
-                 question.type === 'multiple-choice' ? 'Multiple Choice' :
-                 question.type === 'true-false' ? 'True/False' : question.type}
+                ${examFormatQuestionType(question.type)}
             </div>
+            <button type="button"
+                    class="bookmark-btn ${bookmarked ? 'bookmarked' : ''}"
+                    onclick="togglePracticeBookmark()"
+                    aria-pressed="${bookmarked}"
+                    aria-label="${bookmarked ? 'Remove bookmark from this question' : 'Bookmark this question'}"
+                    title="${bookmarked ? 'Remove bookmark' : 'Bookmark this question'}">
+                <i class="${bookmarked ? 'fas' : 'far'} fa-bookmark"></i>
+            </button>
         </div>
 
         <div class="question-text">${question.question}</div>
@@ -261,19 +279,27 @@ function loadPracticeQuestion(state) {
             <!-- Options will be injected here -->
         </div>
 
-        <div class="practice-feedback" id="practiceFeedback" style="display: none;">
-            <!-- Feedback will be shown after answering -->
+        <div class="exam-feedback ${showFeedback ? (isCorrect ? 'feedback-correct' : 'feedback-incorrect') : ''}"
+             id="practiceFeedback"
+             style="display: ${showFeedback ? 'block' : 'none'};">
+            ${examBuildFeedbackHtml(question, answered, isCorrect, showFeedback)}
         </div>
     `;
 
     // Render options
     const optionsContainer = document.getElementById('practiceOptionsContainer');
     question.options.forEach((option, index) => {
-        const isSelected = state.answers[state.currentIndex] &&
-                          state.answers[state.currentIndex].includes(index);
+        const isSelected = answered.includes(index);
+        const isCorrectOption = showFeedback && (question.correctIndexes || []).includes(index);
+        const isWrongPick = showFeedback && isSelected && !isCorrectOption;
+
+        const classes = ['option-label'];
+        if (isSelected) classes.push('selected');
+        if (isCorrectOption) classes.push('correct');
+        if (isWrongPick) classes.push('incorrect');
 
         optionsContainer.innerHTML += `
-            <label class="option-label ${isSelected ? 'selected' : ''}"
+            <label class="${classes.join(' ')}"
                    onclick="togglePracticeOption(${index})">
                 <div class="option-checkbox">
                     <div class="option-checkbox-inner"></div>
@@ -284,16 +310,87 @@ function loadPracticeQuestion(state) {
     });
 }
 
+function examFormatQuestionType(type) {
+    switch (type) {
+        case 'single-choice': return 'Single Choice';
+        case 'multiple-choice':
+        case 'multi-choice': return 'Multiple Choice';
+        case 'true-false': return 'True / False';
+        default: return type;
+    }
+}
+
+function examAnswerMatches(a, b) {
+    if (!Array.isArray(a) || !Array.isArray(b)) return false;
+    const sa = [...a].sort((x, y) => x - y);
+    const sb = [...b].sort((x, y) => x - y);
+    return sa.length === sb.length && sa.every((v, i) => v === sb[i]);
+}
+
+function examBuildFeedbackHtml(question, answered, isCorrect, showFeedback) {
+    if (!showFeedback) return '';
+    const correctText = (question.correctIndexes || [])
+        .map(ix => question.options[ix]).join(', ');
+    return `
+        <div class="feedback-head">
+            <i class="fas ${isCorrect ? 'fa-circle-check' : 'fa-circle-xmark'}"></i>
+            <span>${isCorrect ? 'Correct!' : 'Not quite...'}</span>
+        </div>
+        ${!isCorrect && correctText ? `<div class="feedback-answer">Correct answer: <strong>${correctText}</strong></div>` : ''}
+        ${question.explanation ? `<div class="feedback-explanation"><i class="fas fa-lightbulb"></i><span>${question.explanation}</span></div>` : ''}
+    `;
+}
+
+function togglePracticeBookmark() {
+    if (!currentPractice) return;
+    const question = currentPractice.questions[currentPractice.currentIndex];
+    bookmarksModule.toggleBookmark(question.id);
+    loadPracticeQuestion(currentPractice);
+}
+
 function togglePracticeOption(optionIndex) {
-    // This would be implemented with proper practice state management
-    // For now, placeholder
-    console.log(`Toggling practice option ${optionIndex}`);
+    if (!currentPractice) return;
+
+    const qIndex = currentPractice.currentIndex;
+    const question = currentPractice.questions[qIndex];
+    const current = currentPractice.answers[qIndex];
+
+    let selection;
+    if (question.type === 'multiple-choice' || question.type === 'multi-choice') {
+        const arr = current ? [...current] : [];
+        const pos = arr.indexOf(optionIndex);
+        if (pos >= 0) arr.splice(pos, 1);
+        else arr.push(optionIndex);
+        selection = arr;
+    } else {
+        selection = [optionIndex];
+    }
+
+    currentPractice.answers[qIndex] = selection;
+    loadPracticeQuestion(currentPractice);
+    updatePracticeStats();
 }
 
 function navigatePracticeQuestion(direction) {
-    // This would be implemented with proper practice state management
-    // For now, placeholder
-    console.log(`Navigating practice question ${direction}`);
+    if (!currentPractice) return;
+    const next = currentPractice.currentIndex + direction;
+    if (next < 0) return;
+    if (next >= currentPractice.questions.length) {
+        // Reveal submit when reaching the end
+        document.getElementById('practiceSubmitBtn').style.display = 'block';
+        return;
+    }
+    currentPractice.currentIndex = next;
+    loadPracticeQuestion(currentPractice);
+}
+
+function updatePracticeStats() {
+    if (!currentPractice) return;
+    const answered = currentPractice.answers.filter(a => a !== null).length;
+    document.getElementById('practiceCorrectCount').textContent = answered;
+    if (answered === currentPractice.questions.length) {
+        document.getElementById('practiceSubmitBtn').style.display = 'block';
+    }
 }
 
 function startPracticeTimer(state) {
@@ -311,16 +408,100 @@ function startPracticeTimer(state) {
 }
 
 function submitPractice() {
-    // This would be implemented with proper practice state management
-    // For now, placeholder
-    console.log('Practice submitted');
-    showPracticeResults();
+    if (!currentPractice) return;
+
+    document.getElementById('practiceSubmitBtn').style.display = 'none';
+    if (currentPractice.timerInterval) clearInterval(currentPractice.timerInterval);
+
+    const questions = currentPractice.questions;
+    const answers = currentPractice.answers;
+
+    // Score the session
+    let correctCount = 0;
+    const questionResults = questions.map((question, index) => {
+        const userAnswer = answers[index];
+        const correctAnswer = question.correctIndexes;
+        let isCorrect = false;
+
+        if (userAnswer && Array.isArray(correctAnswer)) {
+            const sortedUser = [...userAnswer].sort((a, b) => a - b);
+            const sortedCorrect = [...correctAnswer].sort((a, b) => a - b);
+            isCorrect = JSON.stringify(sortedUser) === JSON.stringify(sortedCorrect);
+        }
+        if (isCorrect) correctCount++;
+
+        return {
+            questionIndex: index,
+            questionId: question.id,
+            userAnswer,
+            correctAnswer,
+            isCorrect,
+            explanation: question.explanation
+        };
+    });
+
+    const total = questions.length;
+    const percent = (correctCount / total) * 100;
+    const result = {
+        correctCount,
+        totalQuestions: total,
+        scorePercent: percent,
+        passed: percent >= 75,
+        questionResults,
+        passMarkPercent: 75,
+        elapsedTime: Math.round((Date.now() - currentPractice.startTime) / 1000)
+    };
+
+    // Persist to history
+    resultsModule.saveResult(result, 'practice', currentPractice.topic);
+
+    const topic = currentPractice.topic;
+    currentPractice = null;
+    showPracticeResults(result, topic);
 }
 
-function showPracticeResults() {
-    // This would be implemented with proper practice state management
-    // For now, placeholder
-    console.log('Showing practice results');
+function showPracticeResults(result, topic) {
+    const container = document.getElementById('practiceContent');
+    const percent = Math.round(result.scorePercent);
+
+    container.innerHTML = `
+        <div class="results-view">
+            <div class="results-header">
+                <div class="results-summary">
+                    <h1 class="section-title ${result.passed ? 'results-title-pass' : 'results-title-fail'}">
+                        ${result.passed ? 'Good work!' : 'Keep Practicing'}
+                    </h1>
+                    <p class="text-muted">
+                        Topic: <strong>${topic}</strong> — you scored
+                        <strong>${result.correctCount}</strong> out of
+                        <strong>${result.totalQuestions}</strong> questions correctly
+                        (${percent}%).
+                    </p>
+                    <div class="results-stats">
+                        <div class="stat-card"><div class="stat-value">${result.correctCount}</div><div class="stat-label">Correct</div></div>
+                        <div class="stat-card"><div class="stat-value">${result.totalQuestions - result.correctCount}</div><div class="stat-label">Incorrect</div></div>
+                        <div class="stat-card"><div class="stat-value">${Math.round(result.elapsedTime || 0)}s</div><div class="stat-label">Time Used</div></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="btn btn-primary" onclick="window.location.hash = '#practice'">
+                            <i class="fas fa-redo"></i> Practice Again
+                        </button>
+                        <button class="btn btn-secondary" onclick="window.location.hash = '#history'">
+                            <i class="fas fa-history"></i> View History
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <h3 class="section-title center">Answer Review</h3>
+            <div class="results-review" id="practiceReview">
+                <div class="empty-state">
+                    <div class="empty-icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="empty-title">Review Saved to History</div>
+                    <div class="empty-subtitle">Detailed per-question review is available in the History view.</div>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 function startSmartPractice() {
@@ -332,17 +513,17 @@ function startSmartPractice() {
 function loadWeaknessChart(history) {
     const chartContainer = document.getElementById('weaknessChart');
 
-    // Simple weakness analysis based on history
+    // Simple weakness analysis based on history (grouped by category,
+    // correct count comes from the saved score on each history item)
     const topicStats = {};
 
     history.forEach(item => {
-        if (!topicStats[item.topic]) {
-            topicStats[item.topic] = { correct: 0, total: 0 };
+        const topic = item.category || 'General';
+        if (!topicStats[topic]) {
+            topicStats[topic] = { correct: 0, total: 0 };
         }
-        topicStats[item.topic].total++;
-        if (item.correct) {
-            topicStats[item.topic].correct++;
-        }
+        topicStats[topic].total += item.total;
+        topicStats[topic].correct += item.score;
     });
 
     // Calculate weakness percentages
@@ -405,3 +586,11 @@ function showPracticeError() {
         </div>
     `;
 }
+// Expose inline-onclick handlers to the global scope (module functions are
+// not otherwise reachable from onclick="..." attributes).
+window.startPracticeSession = startPracticeSession;
+window.startSmartPractice = startSmartPractice;
+window.navigatePracticeQuestion = navigatePracticeQuestion;
+window.togglePracticeOption = togglePracticeOption;
+window.submitPractice = submitPractice;
+window.togglePracticeBookmark = togglePracticeBookmark;

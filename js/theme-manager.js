@@ -54,3 +54,10 @@ export function applyScheme(scheme) {
     htmlElement.setAttribute('data-scheme', scheme);
     localStorage.setItem('wt-scheme', scheme);
 }
+
+// Shared handle used by views (e.g. settings) that import the theme manager.
+export const themeManager = {
+    applyTheme,
+    applyScheme,
+    initThemeManager
+};

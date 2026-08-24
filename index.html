@@ -17,8 +17,13 @@
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
     <!-- Theme Bootstrap: Inline script to handle theme persistence -->
     <script>
         // Handle theme persistence
@@ -27,34 +32,47 @@
         document.documentElement.setAttribute('data-theme', savedTheme);
         document.documentElement.setAttribute('data-scheme', savedScheme);
     </script>
+</head>
 
+<body>
     <!-- Navbar -->
     <nav class="nav">
         <div class="nav-inner">
             <div class="logo">
                 <div class="logo-mark">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 8v4l3 3"/>
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="12" fill="url(#logoGrad)" />
+                        <path d="M10 14.5h12c3.5 0 6 2 6 5.5s-2.5 5.5-6 5.5h-4.5v3" stroke="white" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="28.5" cy="28.5" r="4.2" fill="#C8102E" stroke="white" stroke-width="1.6" />
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+                                <stop stop-color="#1E3A8A" />
+                                <stop offset="1" stop-color="#0F1E3D" />
+                            </linearGradient>
+                        </defs>
                     </svg>
                 </div>
                 <div>
-                    <div class="logo-text">Wolverhampton Taxi</div>
-                    <div class="logo-in">Knowledge Test</div>
+                    <div class="logo-text">Wolverhampton<span class="logo-in">Taxi</span></div>
+                    <div class="logo-accent">Knowledge Test</div>
                 </div>
             </div>
-            <div class="nav-links" id="navLinks">
-                <a href="#dashboard" class="nav-link active" data-view="dashboard">Dashboard</a>
-                <a href="#exams" class="nav-link" data-view="exams">Mock Tests</a>
-                <a href="#practice" class="nav-link" data-view="practice">Practice</a>
-                <a href="#history" class="nav-link" data-view="history">History</a>
-                <a href="#bookmarks" class="nav-link" data-view="bookmarks">Bookmarks</a>
-                <a href="#settings" class="nav-link" data-view="settings">Settings</a>
-                <a href="#guide" class="nav-link" data-view="guide">Application Guide</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#" class="nav-link active" data-view="dashboard">Dashboard</a>
+                <a href="#" class="nav-link" data-view="exams">Mock Tests</a>
+                <a href="#" class="nav-link" data-view="practice">Practice</a>
+                <a href="#" class="nav-link" data-view="history">History</a>
+                <a href="#" class="nav-link" data-view="bookmarks">Bookmarks</a>
+                <a href="#" class="nav-link" data-view="settings">Settings</a>
+                <a href="#" class="nav-link" data-view="guide">Application Guide</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" type="button"
+                    aria-label="Switch to dark mode" aria-pressed="false">🌙</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"
+                    aria-expanded="false">☰</button>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </nav>
 

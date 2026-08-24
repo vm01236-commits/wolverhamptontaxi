@@ -198,8 +198,8 @@ function viewBookmarkQuestion(questionId) {
     alert(`Viewing bookmarked question: ${questionId}`);
 }
 
-function removeBookmark(questionId) {
-    if (confirm('Remove this question from bookmarks?')) {
+async function removeBookmark(questionId) {
+    if (await confirm('Remove this question from bookmarks?')) {
         const success = bookmarksModule.removeBookmark(questionId);
         if (success) {
             // Re-render bookmarks
@@ -210,8 +210,8 @@ function removeBookmark(questionId) {
     }
 }
 
-function clearAllBookmarks() {
-    if (confirm('Are you sure you want to remove all bookmarks?')) {
+async function clearAllBookmarks() {
+    if (await confirm('Are you sure you want to remove all bookmarks?')) {
         // Clear bookmarks
         bookmarksModule.clearBookmarks();
 
@@ -239,3 +239,11 @@ function showErrorMessage() {
         </div>
     `;
 }
+// Expose inline-onclick handlers to the global scope (module functions are
+// not otherwise reachable from onclick="...").
+window.clearAllBookmarks = clearAllBookmarks;
+window.startBookmarkReview = startBookmarkReview;
+window.applyBookmarksFilters = applyBookmarksFilters;
+window.resetBookmarksFilters = resetBookmarksFilters;
+window.viewBookmarkQuestion = viewBookmarkQuestion;
+window.removeBookmark = removeBookmark;

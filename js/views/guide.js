@@ -56,18 +56,21 @@ async function loadGuideData() {
         // Load application guide
         const guide = await window.dataLayer.loadApplicationGuide();
 
-        // Load FAQs
+        // Load FAQs (from faq.json, and supplement with guide-embedded FAQs)
         const faqs = await window.dataLayer.loadFAQs();
+        const guideFaqs = (guide && Array.isArray(guide.faqs)) ? guide.faqs : [];
+        const allFaqs = (Array.isArray(faqs) ? faqs : [])
+            .concat(guideFaqs.filter(f => f && f.question && !(Array.isArray(faqs) && faqs.some(x => x.question === f.question))));
 
         // Render guide
         renderGuide(guide);
 
         // Render FAQs
-        renderFAQs(faqs);
+        renderFAQs(allFaqs);
 
         // Update sections count
         document.getElementById('guideSectionsCount').textContent =
-            guide.sections ? guide.sections.length : 0;
+            guide.sections ? guide.sections.length : buildGuideSections(guide).length;
 
     } catch (error) {
         console.error('Error loading guide data:', error);
@@ -75,10 +78,61 @@ async function loadGuideData() {
     }
 }
 
+// Strip basic markdown formatting (**bold**, *italic*) for plain display
+function stripMarkdown(text) {
+    return String(text || '')
+        .replace(/\*\*/g, '')
+        .replace(/\*/g, '');
+}
+
+// The guide JSON stores content under section keys (badge, plate, ...);
+// normalise it into the { sections: [...] } shape the view expects.
+function buildGuideSections(guide) {
+    if (!guide || typeof guide !== 'object') return [];
+    if (Array.isArray(guide.sections)) return guide.sections;
+
+    const sections = Object.entries(guide)
+        .filter(([key, value]) => key !== 'faqs' && value && typeof value === 'object')
+        .map(([key, value]) => {
+            const content = [];
+            if (value.renewal_info) content.push({ type: 'paragraph', text: stripMarkdown(value.renewal_info) });
+            if (Array.isArray(value.eligibility_checklist) && value.eligibility_checklist.length) {
+                content.push({ type: 'list', items: value.eligibility_checklist.map(stripMarkdown) });
+            }
+            if (Array.isArray(value.process_steps) && value.process_steps.length) {
+                content.push({ type: 'list', items: value.process_steps.map(stripMarkdown) });
+            }
+            if (Array.isArray(value.fees_table) && value.fees_table.length) {
+                content.push({ type: 'paragraph', text: value.fees_table.filter(t => t !== '---').join(' | ') });
+            }
+            return { title: value.title || key, content };
+        })
+        .filter(section => section.content.length > 0);
+
+    return sections.length ? sections : [];
+}
+
 function renderGuide(guide) {
     const contentContainer = document.getElementById('guideContent');
 
-    if (!guide || !guide.sections || guide.sections.length === 0) {
+    if (!guide || typeof guide !== 'object') {
+        contentContainer.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="empty-title">Guide Not Available</div>
+                <div class="empty-subtitle">
+                    The application guide could not be loaded. Please try again later.
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    const sections = buildGuideSections(guide);
+
+    if (sections.length === 0) {
         contentContainer.innerHTML = `
             <div class="empty-state">
                 <div class="empty-icon">
@@ -94,7 +148,7 @@ function renderGuide(guide) {
     }
 
     // Build table of contents
-    const tocItems = guide.sections.map((section, index) => `
+    const tocItems = sections.map((section, index) => `
         <li>
             <a href="#section-${index}">
                 <div class="guide-toc-icon">${section.icon || '📖'}</div>
@@ -114,7 +168,7 @@ function renderGuide(guide) {
 
         <!-- Main Content -->
         <main>
-            ${guide.sections.map((section, index) => renderGuideSection(section, index)).join('')}
+            ${sections.map((section, index) => renderGuideSection(section, index)).join('')}
         </main>
     `;
 }
@@ -126,6 +180,22 @@ function renderGuideSection(section, index) {
             ${section.content.map(block => {
                 if (block.type === 'paragraph') {
                     return `<p>${block.text}</p>`;
+                } else if (block.type === 'heading') {
+                    const tag = block.level >= 4 ? 'h4' : 'h3';
+                    return `<${tag} class="guide-subheading">${block.text}</${tag}>`;
+                } else if (block.type === 'table') {
+                    const head = block.head || [];
+                    const rows = block.rows || [];
+                    return `
+                        <div class="guide-table-wrap">
+                            <table class="guide-table">
+                                ${head.length ? `<thead><tr>${head.map(h => `<th>${h}</th>`).join('')}</tr></thead>` : ''}
+                                <tbody>
+                                    ${rows.map(r => `<tr>${r.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
                 } else if (block.type === 'list') {
                     const listType = block.ordered ? 'ol' : 'ul';
                     const items = block.items.map(item => `<li>${item}</li>`).join('');
@@ -197,3 +267,6 @@ function showErrorMessage() {
         </div>
     `;
 }
+// Expose inline-onclick handlers to the global scope (module functions are
+// not otherwise reachable from onclick="...").
+window.toggleFAQ = toggleFAQ;

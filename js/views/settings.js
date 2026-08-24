@@ -337,8 +337,8 @@ function importData() {
     input.click();
 }
 
-function clearAllData() {
-    if (confirm('Are you sure you want to clear ALL data? This includes history, bookmarks, and settings. This action cannot be undone.')) {
+async function clearAllData() {
+    if (await confirm('Are you sure you want to clear ALL data? This includes history, bookmarks, and settings. This action cannot be undone.')) {
         // Clear all localStorage items related to the app
         const keysToRemove = [];
         for (let i = 0; i < localStorage.length; i++) {
@@ -356,8 +356,8 @@ function clearAllData() {
     }
 }
 
-function resetToDefaults() {
-    if (confirm('Are you sure you want to reset all settings to their default values?')) {
+async function resetToDefaults() {
+    if (await confirm('Are you sure you want to reset all settings to their default values?')) {
         // Reset to default values
         localStorage.setItem('wt-theme', 'light');
         localStorage.setItem('wt-scheme', 'default');
@@ -375,3 +375,9 @@ function resetToDefaults() {
         alert('Settings have been reset to defaults');
     }
 }
+// Expose inline-onclick handlers to the global scope (module functions are
+// not otherwise reachable from onclick="...").
+window.exportData = exportData;
+window.importData = importData;
+window.clearAllData = clearAllData;
+window.resetToDefaults = resetToDefaults;

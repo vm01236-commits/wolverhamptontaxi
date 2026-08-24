@@ -266,8 +266,8 @@ function viewHistoryDetails(id) {
     alert(`Viewing details for history item: ${id}`);
 }
 
-function deleteHistoryItem(id) {
-    if (confirm('Are you sure you want to delete this history item?')) {
+async function deleteHistoryItem(id) {
+    if (await confirm('Are you sure you want to delete this history item?')) {
         // Get existing history
         const history = JSON.parse(localStorage.getItem('wt-history') || '[]');
 
@@ -296,3 +296,9 @@ function showErrorMessage() {
         </div>
     `;
 }
+// Expose inline-onclick handlers to the global scope (module functions are
+// not otherwise reachable from onclick="...").
+window.applyHistoryFilters = applyHistoryFilters;
+window.resetHistoryFilters = resetHistoryFilters;
+window.viewHistoryDetails = viewHistoryDetails;
+window.deleteHistoryItem = deleteHistoryItem;

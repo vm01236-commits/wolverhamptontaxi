@@ -195,7 +195,7 @@ export function loadFAQs() {
     loadingState.faqs = true;
 
     // Create promise for loading
-    loadPromises.faqs = fetch('data/faqs.json')
+    loadPromises.faqs = fetch('data/faq.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load FAQs: ${response.status}`);
@@ -294,4 +294,4 @@ export function initDataLayer() {
 }
 
 // Export utility functions for use in other modules
-export { dataLayer, initDataLayer };
+export { dataLayer };

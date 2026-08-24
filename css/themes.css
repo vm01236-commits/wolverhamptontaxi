@@ -644,6 +644,31 @@
 }
 
 /* ------------------------------------------------------------
+   Backfilled tokens — referenced by views/components but missing
+   from the original theme. Kept at the end so schemes/overrides
+   defined above take precedence where they are re-declared.
+   ------------------------------------------------------------ */
+:root {
+    --font-mono: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Courier New', monospace;
+    --blue-tint: rgba(1, 33, 105, 0.12);
+    --purple: #6d28d9;
+    --purple-tint: rgba(109, 40, 217, 0.12);
+    --green-tint: rgba(22, 163, 74, 0.12);
+    --amber-tint: rgba(180, 83, 9, 0.12);
+    --amber-dark: #92400e;
+}
+
+[data-theme='dark'] {
+    --font-mono: ui-monospace, 'Cascadia Mono', 'Segoe UI', 'Courier New', monospace;
+    --blue-tint: rgba(142, 168, 255, 0.18);
+    --purple: #b39dff;
+    --purple-tint: rgba(167, 157, 255, 0.18);
+    --green-tint: rgba(74, 222, 128, 0.16);
+    --amber-tint: rgba(251, 191, 36, 0.16);
+    --amber-dark: #fbbf24;
+}
+
+/* ------------------------------------------------------------
    Transitions — smooth theme swap without animating layout.
    The .theme-switching class is applied briefly by theme-manager.
    ------------------------------------------------------------ */
