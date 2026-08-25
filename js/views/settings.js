@@ -1,11 +1,51 @@
 // ============================================================
 // SETTINGS VIEW - Application settings and preferences
+//
+// The Appearance / Colour Scheme / Text Size sections are ported
+// from the Life-in-UK app (FIX #2 + FIX #5): a segmented theme
+// picker (Light/Dark/System), colour-scheme cards with swatches
+// and a font-scale display-type control with a live preview.
 // ============================================================
 
-import { themeManager } from '../theme-manager.js';
+import { getPrefs } from '../storage.js';
+import {
+    SCHEMES, THEMES, setTheme, setScheme, setFontScale,
+    effectiveTheme, applyTheme, toast,
+} from '../theme-manager.js';
+
+const FONT_SCALES = [
+    { value: 90, label: 'Small' },
+    { value: 100, label: 'Default' },
+    { value: 112, label: 'Large' },
+    { value: 125, label: 'Extra Large' },
+];
+
+function themeNote(pref) {
+    if (pref === 'system') {
+        return `Following your device setting — currently ${effectiveTheme()}.`;
+    }
+    return `Always ${pref}, regardless of your device setting.`;
+}
+
+function schemeCard(scheme, selected) {
+    return `
+        <button class="scheme-card ${selected ? 'selected' : ''}" type="button" role="radio"
+                data-scheme-option="${scheme.id}" aria-checked="${selected}">
+            <span class="scheme-swatches" aria-hidden="true">
+                ${scheme.swatches.map((c) => `<span class="scheme-swatch" style="background:${c}"></span>`).join('')}
+            </span>
+            <span class="scheme-name">
+                ${scheme.name}
+                ${selected ? '<span class="scheme-check" aria-hidden="true">✓</span>' : ''}
+            </span>
+            <span class="scheme-desc">${scheme.description}</span>
+        </button>`;
+}
 
 export function init(container) {
     // Load settings view content
+    const prefs = getPrefs();
+
     container.innerHTML = `
         <div class="settings-view">
             <!-- Settings Header -->
@@ -13,7 +53,7 @@ export function init(container) {
                 <div class="exam-header-left">
                     <h1 class="section-title">Settings</h1>
                     <p class="text-muted">
-                        Customize your Wolverhampton Taxi Knowledge Test experience.
+                        Make the site comfortable to read and study in.
                     </p>
                 </div>
                 <div class="exam-header-right">
@@ -21,38 +61,48 @@ export function init(container) {
                 </div>
             </header>
 
-            <!-- Settings Sections -->
-            <section class="settings-section">
-                <h3 class="section-title">Appearance</h3>
-                <div class="setting-item">
-                    <div class="setting-label">
-                        <span>Theme</span>
-                        <span class="setting-value" id="currentTheme">Light</span>
-                    </div>
+            <!-- Appearance -->
+            <section class="settings-section" aria-labelledby="setting-theme">
+                <h3 class="settings-title" id="setting-theme">Appearance</h3>
+                <p class="settings-help">Dark mode reduces glare when studying in low light.</p>
+                <div class="segmented" role="radiogroup" aria-labelledby="setting-theme">
+                    ${[
+                        { id: 'light', label: '☀️ Light' },
+                        { id: 'dark', label: '🌙 Dark' },
+                        { id: 'system', label: '💻 System' },
+                    ].map((t) => `
+                        <button class="segment ${prefs.theme === t.id ? 'active' : ''}"
+                                type="button" role="radio" data-theme-option="${t.id}"
+                                aria-checked="${prefs.theme === t.id}">${t.label}</button>`).join('')}
                 </div>
-                <div class="setting-item">
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="darkModeToggle">
-                        <span class="toggle-slider"></span>
-                    </label>
-                    <span>Dark Mode</span>
+                <p class="settings-note" id="themeNote">${themeNote(prefs.theme)}</p>
+            </section>
+
+            <!-- Colour Scheme -->
+            <section class="settings-section" aria-labelledby="setting-scheme">
+                <h3 class="settings-title" id="setting-scheme">Colour Scheme</h3>
+                <p class="settings-help">
+                    Each scheme works in both light and dark mode. Status is always
+                    shown with a label or icon as well as colour.
+                </p>
+                <div class="scheme-grid" role="radiogroup" aria-labelledby="setting-scheme">
+                    ${SCHEMES.map((s) => schemeCard(s, prefs.scheme === s.id)).join('')}
                 </div>
-                <div class="setting-item">
-                    <div class="setting-label">
-                        <span>Color Scheme</span>
-                        <span class="setting-value" id="currentScheme">Default</span>
-                    </div>
+            </section>
+
+            <!-- Text Size (display type) -->
+            <section class="settings-section" aria-labelledby="setting-font">
+                <h3 class="settings-title" id="setting-font">Text Size</h3>
+                <p class="settings-help">Scales body text across the whole site.</p>
+                <div class="segmented" role="radiogroup" aria-labelledby="setting-font">
+                    ${FONT_SCALES.map((f) => `
+                        <button class="segment ${prefs.fontScale === f.value ? 'active' : ''}"
+                                type="button" role="radio" data-font-option="${f.value}"
+                                aria-checked="${prefs.fontScale === f.value}">${f.label}</button>`).join('')}
                 </div>
-                <div class="setting-item">
-                    <span>Scheme:</span>
-                    <div class="scheme-options">
-                        <button class="scheme-btn" data-scheme="default">Default</button>
-                        <button class="scheme-btn" data-scheme="warm">Warm</button>
-                        <button class="scheme-btn" data-scheme="cool">Cool</button>
-                        <button class="scheme-btn" data-scheme="high-contrast">High Contrast</button>
-                        <button class="scheme-btn" data-scheme="monochrome">Monochrome</button>
-                    </div>
-                </div>
+                <p class="settings-preview" id="fontPreview">
+                    The quick brown fox jumps over the lazy dog while you revise for your test.
+                </p>
             </section>
 
             <section class="settings-section">
@@ -151,68 +201,80 @@ export function init(container) {
 }
 
 function loadSettings() {
-    // Load theme settings
-    const savedTheme = localStorage.getItem('wt-theme') || 'light';
-    const savedScheme = localStorage.getItem('wt-scheme') || 'default';
-
-    document.getElementById('currentTheme').textContent =
-        savedTheme === 'light' ? 'Light' : 'Dark';
-    document.getElementById('darkModeToggle').checked = savedTheme === 'dark';
-    document.getElementById('currentScheme').textContent =
-        savedScheme.charAt(0).toUpperCase() + savedScheme.slice(1).replace('-', ' ');
-
-    // Highlight current scheme button
-    document.querySelectorAll('.scheme-btn').forEach(btn => {
-        if (btn.dataset.scheme === savedScheme) {
-            btn.classList.add('active');
-        }
-    });
-
-    // Load practice settings
-    const questionsPerSession = localStorage.getItem('wt-questionsPerSession') || '10';
-    document.getElementById('questionsPerSession').textContent = questionsPerSession;
-    document.getElementById('shuffleQuestionsToggle').checked =
-        localStorage.getItem('wt-shuffleQuestions') === 'true';
-    document.getElementById('showExplanationsToggle').checked =
-        localStorage.getItem('wt-showExplanations') !== 'false';
-    document.getElementById('instantFeedbackToggle').checked =
-        localStorage.getItem('wt-instantFeedback') !== 'false';
-
-    // Load mock test settings
-    document.getElementById('timerWarnings').textContent =
-        localStorage.getItem('wt-timerWarnings') || '5 min, 1 min';
-    document.getElementById('autoSubmitToggle').checked =
-        localStorage.getItem('wt-autoSubmit') !== 'false';
-    document.getElementById('reviewIncorrectToggle').checked =
-        localStorage.getItem('wt-reviewIncorrect') !== 'false';
-
-    // Set up event listeners
-    setupSettingsListeners();
-}
-
-function setupSettingsListeners() {
-    // Theme toggle
-    document.getElementById('darkModeToggle').addEventListener('change', (e) => {
-        const theme = e.target.checked ? 'dark' : 'light';
-        themeManager.applyTheme(theme);
-        document.getElementById('currentTheme').textContent =
-            theme === 'light' ? 'Light' : 'Dark';
-    });
-
-    // Scheme buttons
-    document.querySelectorAll('.scheme-btn').forEach(btn => {
+    // ---- Theme (segmented Light / Dark / System) ----
+    document.querySelectorAll('[data-theme-option]').forEach((btn) => {
         btn.addEventListener('click', () => {
-            const scheme = btn.dataset.scheme;
-            themeManager.applyScheme(scheme);
-            document.getElementById('currentScheme').textContent =
-                scheme.charAt(0).toUpperCase() + scheme.slice(1).replace('-', ' ');
-
-            // Update active button
-            document.querySelectorAll('.scheme-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            const value = btn.dataset.themeOption;
+            setTheme(value);
+            syncThemeControls(value);
+            toast(`Appearance set to ${value}`);
         });
     });
 
+    // ---- Colour scheme cards ----
+    document.querySelectorAll('[data-scheme-option]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const value = btn.dataset.schemeOption;
+            setScheme(value);
+            syncSchemeControls(value);
+            const scheme = SCHEMES.find((s) => s.id === value);
+            toast(`🎨 Scheme changed to ${scheme ? scheme.name : value}`);
+        });
+    });
+
+    // ---- Text size (display type) ----
+    document.querySelectorAll('[data-font-option]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const value = Number(btn.dataset.fontOption);
+            setFontScale(value);
+            syncFontControls(value);
+            const label = (FONT_SCALES.find((f) => f.value === value) || {}).label;
+            toast(`Text size: ${label || value + '%'}`);
+        });
+    });
+
+    // Practice & mock test settings
+    setupSettingsListeners();
+}
+
+/** Reflect the chosen theme preference on the segmented control + note. */
+function syncThemeControls(pref) {
+    document.querySelectorAll('[data-theme-option]').forEach((b) => {
+        const on = b.dataset.themeOption === pref;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-checked', String(on));
+    });
+    const note = document.getElementById('themeNote');
+    if (note) note.textContent = themeNote(pref);
+}
+
+/** Reflect the chosen scheme on the cards (border tint + ✓ badge). */
+function syncSchemeControls(schemeId) {
+    document.querySelectorAll('[data-scheme-option]').forEach((b) => {
+        const on = b.dataset.schemeOption === schemeId;
+        b.classList.toggle('selected', on);
+        b.setAttribute('aria-checked', String(on));
+        const name = b.querySelector('.scheme-name');
+        const check = b.querySelector('.scheme-check');
+        if (on && !check && name) {
+            name.insertAdjacentHTML('beforeend',
+                '<span class="scheme-check" aria-hidden="true">✓</span>');
+        } else if (!on && check) {
+            check.remove();
+        }
+    });
+}
+
+/** Reflect the chosen font scale on the segmented control. */
+function syncFontControls(value) {
+    document.querySelectorAll('[data-font-option]').forEach((b) => {
+        const on = Number(b.dataset.fontOption) === value;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-checked', String(on));
+    });
+}
+
+function setupSettingsListeners() {
     // Practice settings
     document.getElementById('questionsPerSession').addEventListener('click', () => {
         const newValue = prompt('Enter number of questions per practice session (5-50):',
@@ -358,8 +420,13 @@ async function clearAllData() {
 
 async function resetToDefaults() {
     if (await confirm('Are you sure you want to reset all settings to their default values?')) {
-        // Reset to default values
+                // Reset appearance preferences to the defaults
+        try { localStorage.removeItem('wt-prefs'); } catch (_) { /* ignore */ }
         localStorage.setItem('wt-theme', 'light');
+        localStorage.setItem('wt-scheme', 'default');
+        applyTheme({ animate: true });
+
+        // Reset to default values
         localStorage.setItem('wt-scheme', 'default');
         localStorage.setItem('wt-questionsPerSession', '10');
         localStorage.setItem('wt-shuffleQuestions', 'false');

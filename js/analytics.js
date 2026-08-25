@@ -97,13 +97,13 @@ function generateRecommendations(weakAreas, byCategory) {
         recommendations.push(`Focus on ${area.category} - currently at ${area.percent}% accuracy`);
     });
 
-    // Add general recommendations
+        // Add general recommendations
     if (weakAreas.length > 3) {
         recommendations.push(`You have ${weakAreas.length} areas needing improvement. Start with the top 3.`);
     }
 
-    recommendations.append("Review the Application Guide for detailed explanations.");
-    recommendations.append("Use practice mode to strengthen weak areas.");
+    recommendations.push("Review the Application Guide for detailed explanations.");
+    recommendations.push("Use practice mode to strengthen weak areas.");
 
     return recommendations;
 }

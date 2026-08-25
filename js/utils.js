@@ -48,3 +48,19 @@ export function formatTime(seconds) {
     const remainingSeconds = secs % 60;
     return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
+
+/**
+ * Format a date/timestamp for display in history (e.g. "25 Aug 2026, 14:30").
+ * Ported from the Life-in-UK app's history page.
+ * @param {Date|string|number} ts - Date object, ISO string, or epoch ms
+ * @returns {string} Localised short date + time
+ */
+export function formatDate(ts) {
+    return new Date(ts).toLocaleString(undefined, {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+}

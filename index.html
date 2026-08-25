@@ -26,11 +26,31 @@
 
     <!-- Theme Bootstrap: Inline script to handle theme persistence -->
     <script>
-        // Handle theme persistence
-        const savedTheme = localStorage.getItem('wt-theme') || 'light';
-        const savedScheme = localStorage.getItem('wt-scheme') || 'default';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        document.documentElement.setAttribute('data-scheme', savedScheme);
+        // Apply the saved preferences BEFORE first paint so the page never
+        // flashes the wrong colors and text size never jumps. Reads the
+        // wt-prefs blob ({ theme, scheme, fontScale }) with a fallback to
+        // the legacy wt-theme key. Safe when localStorage is blocked.
+        (function () {
+            try {
+                var p = JSON.parse(localStorage.getItem('wt-prefs') || '{}');
+                var theme = p.theme
+                    || (['light', 'dark'].indexOf(localStorage.getItem('wt-theme')) > -1
+                        ? localStorage.getItem('wt-theme') : 'system');
+                if (theme === 'system') {
+                    theme = window.matchMedia
+                        && window.matchMedia('(prefers-color-scheme: dark)').matches
+                        ? 'dark' : 'light';
+                }
+                var root = document.documentElement;
+                root.setAttribute('data-theme', theme);
+                root.setAttribute('data-scheme',
+                    p.scheme || localStorage.getItem('wt-scheme') || 'default');
+                root.style.setProperty('--font-scale', (p.fontScale || 100) + '%');
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.setAttribute('data-scheme', 'default');
+            }
+        })();
     </script>
 </head>
 

@@ -117,10 +117,15 @@ export function getHistory() {
             : total > 0 ? Math.round(((r.correct ?? 0) / total) * 100) : 0;
         return {
             id: r.id,
-            timestamp: r.date ? new Date(r.date).toISOString() : new Date().toISOString(),
+            timestamp: r.date ? new Date(r.date).toISOString()
+                : (r.timestamp ? new Date(r.timestamp).toISOString() : new Date().toISOString()),
             type: (r.mode && r.mode !== 'exam') ? 'practice' : 'mock',
             category: r.category ?? null,
             mockId: r.examId ?? null,
+            // Optional display fields passed through for views that render
+            // history cards (History page). Absent on legacy wt-history items.
+            examTitle: r.examTitle ?? null,
+            timeTakenSec: typeof r.timeTakenSec === 'number' ? r.timeTakenSec : null,
             score: typeof r.correct === 'number' ? r.correct : Math.round((percent / 100) * total),
             total,
             percent,

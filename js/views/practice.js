@@ -4,9 +4,57 @@
 
 import { resultsModule } from '../results.js';
 import { bookmarksModule } from '../bookmarks.js';
+import { analyzePerformance } from '../analytics.js';
+import { getQuestionStats } from '../storage.js';
 
 // Active practice session (module-scope so inline onclick handlers can drive it)
 let currentPractice = null;
+
+/* ============================================================
+   SMART PRACTICE MODE CARDS - ported from the Life-in-UK app.
+   Ad-hoc untimed sessions built from the learner's own mistake
+   history instead of forcing full-topic retakes.
+   ============================================================ */
+
+/** Sessions are capped so a big question pool stays finishable. */
+export const SESSION_CAP = 30;
+
+export const PRACTICE_MODES = [
+    {
+        id: 'all',
+        icon: '🎲',
+        label: 'All Questions',
+        description: 'A random mix drawn from every topic. Good for general revision.',
+    },
+    {
+        id: 'incorrect',
+        icon: '🎯',
+        label: 'Incorrect Only',
+        description: 'Only the questions you last answered wrong or skipped.',
+    },
+    {
+        id: 'repeated',
+        icon: '🔁',
+        label: 'Repeated Mistakes',
+        description: 'Questions you have missed 2+ times. Highest priority.',
+    },
+    {
+        id: 'weak',
+        icon: '📉',
+        label: 'Weak Areas',
+        description: 'Questions from your lowest-scoring topics.',
+    },
+];
+
+/** Fisher-Yates shuffle returning a new array. */
+function shuffle(array) {
+    const a = [...array];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
 
 export function init(container) {
     // Load practice view content
@@ -47,6 +95,15 @@ export function init(container) {
                 <!-- Practice questions will be injected here -->
             </div>
 
+            <!-- Smart Practice mode cards (ported from Life-in-UK) -->
+            <section class="smart-modes-section" id="smartModeSection">
+                <h2 class="section-title center">Smart Practice</h2>
+                <p class="text-muted center">Target your mistakes instead of retaking whole topics</p>
+                <div id="recommendSlot"></div>
+                <div id="statsSlot"></div>
+                <div class="practice-grid" id="smartModeGrid"></div>
+            </section>
+
             <!-- Smart Practice Section -->
             <section class="smart-practice-view" id="smartPracticeSection" style="display: none;">
                 <h2 class="section-title center">Focus Areas</h2>
@@ -74,13 +131,18 @@ async function loadPracticeData() {
         // Get all categories
         const categories = await window.dataLayer.getAllCategories();
 
-        // Load user progress/history for smart practice
+                // Load user progress/history for smart practice
         const history = resultsModule.getHistory();
 
         // Render controls
         renderPracticeControls(categories, questions);
 
-        // Show smart practice section if we have history
+        // Render the smart-practice mode cards (ported from Life-in-UK).
+        // Guarded so a failure here can never take down the topic selector.
+        try { renderSmartModeCards(questions); }
+        catch (err) { console.error('Smart practice cards failed:', err); }
+
+        // Show the existing weakness-chart section if we have history
         if (history.length > 0) {
             document.getElementById('smartPracticeSection').style.display = 'block';
             loadWeaknessChart(history);
@@ -504,10 +566,201 @@ function showPracticeResults(result, topic) {
     `;
 }
 
+/** Basic HTML escaping for data-driven strings. */
+function esc(text) {
+    return String(text ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+/**
+ * Build the per-mode question pools from mistake history.
+ * @param {Array} questions - every question in the data layer
+ */
+function buildSmartPools(questions) {
+    const stats = getQuestionStats();
+    const history = resultsModule.getHistory();
+    const hasHistory = history.length > 0;
+
+    // Map questionId -> stat entry (first wins regardless of exam key)
+    const statByQ = new Map();
+    Object.values(stats).forEach((s) => {
+        const k = String(s.questionId);
+        if (!statByQ.has(k)) statByQ.set(k, s);
+    });
+    const byId = new Map(questions.map((q) => [String(q.id), q]));
+
+    const incorrect = [];
+    const repeated = [];
+    statByQ.forEach((s, idStr) => {
+        const q = byId.get(idStr);
+        if (!q) return;
+        if (s.lastOutcome === 'wrong' || s.lastOutcome === 'skipped') incorrect.push(q);
+        if ((s.timesWrong || 0) >= 2) repeated.push(q);
+    });
+
+    // Weak topics inferred from saved history accuracy
+    const catStats = {};
+    history.forEach((item) => {
+        const c = item.category || 'General';
+        if (!catStats[c]) catStats[c] = { correct: 0, total: 0 };
+        catStats[c].total += item.total;
+        catStats[c].correct += item.score;
+    });
+    const rankedTopics = Object.entries(catStats)
+        .map(([topic, s]) => ({ topic, pct: s.total ? (s.correct / s.total) * 100 : 0 }))
+        .sort((a, b) => a.pct - b.pct);
+    const weakest = new Set(rankedTopics.slice(0, 3).map((r) => r.topic));
+
+    const wrongCount = (q) => (statByQ.get(String(q.id)) || {}).timesWrong || 0;
+    const weak = questions
+        .filter((q) => weakest.has(String(q.category || '').trim()))
+        .sort((a, b) => wrongCount(b) - wrongCount(a)); // worst-first
+
+    return { all: questions, incorrect, repeated, weak, rankedTopics, hasHistory };
+}
+
+/** Render the recommend banner, summary stats and mode cards. */
+function renderSmartModeCards(questions) {
+    const grid = document.getElementById('smartModeGrid');
+    if (!grid) return;
+
+    const pools = buildSmartPools(questions);
+
+        // Recommendation banner + summary stats (only once there is history).
+    // Wrapped in try/catch: analytics.analyzePerformance has a latent bug
+    // (Array.append) upstream, and the recommendation banner must never
+    // take the whole Practice view down because of it.
+    const recSlot = document.getElementById('recommendSlot');
+    const statsSlot = document.getElementById('statsSlot');
+    if (pools.hasHistory && recSlot && statsSlot) {
+        let analysis = null;
+        try {
+            analysis = analyzePerformance(resultsModule.getHistory());
+        } catch (err) {
+            console.error('Recommendation analysis failed:', err);
+        }
+
+        if (analysis) {
+            const top = analysis.weakAreas[0];
+            const body = top
+                ? `${esc(top.category)} is currently at ${Math.round(top.percent)}% accuracy — a focused session will lift it fastest.`
+                : esc(analysis.recommendations[0] || 'Keep practising to build on your streak!');
+
+            recSlot.innerHTML = `
+                <div class="recommend-card">
+                    <span class="recommend-icon" aria-hidden="true">💡</span>
+                    <div class="recommend-body">
+                        <h3 class="recommend-title">${top ? `Focus on ${esc(top.category)}` : 'You are doing great'}</h3>
+                        <p class="recommend-text">${body}</p>
+                    </div>
+                    <button type="button" class="btn btn-primary recommend-cta"
+                            onclick="startModePractice('${top ? 'weak' : 'all'}')">
+                        ${top ? 'Start Now' : 'Keep Going'}
+                    </button>
+                </div>`;
+        }
+
+        const scores = resultsModule.getHistory()
+            .map((h) => (h.total ? Math.round((h.score / h.total) * 100) : 0));
+        const avg = Math.round(scores.reduce((sum2, s2) => sum2 + s2, 0) / scores.length);
+        const best = Math.max(...scores);
+        const passed = scores.filter((s2) => s2 >= 75).length;
+        statsSlot.innerHTML = `
+            <div class="practice-stats">
+                <div class="pstat"><span class="pstat-value">${scores.length}</span><span class="pstat-label">Sessions taken</span></div>
+                <div class="pstat"><span class="pstat-value">${avg}%</span><span class="pstat-label">Average score</span></div>
+                <div class="pstat"><span class="pstat-value">${best}%</span><span class="pstat-label">Best score</span></div>
+                <div class="pstat"><span class="pstat-value">${passed}</span><span class="pstat-label">Passed (75%+)</span></div>
+            </div>`;
+    }
+
+    grid.innerHTML = PRACTICE_MODES.map((mode) => smartModeCard(mode, pools)).join('');
+}
+
+/** One card in the Smart Practice grid. */
+function smartModeCard(mode, pools) {
+    const pool = pools[mode.id] || [];
+    const count = pool.length;
+    const available = count > 0;
+    const capped = available && count > SESSION_CAP;
+
+    let meta;
+    if (!available) {
+        meta = mode.id === 'all' ? 'No questions available'
+            : pools.hasHistory ? 'All clear — nothing to practise ✓'
+                : 'Take a test first to unlock this';
+    } else if (capped) {
+        meta = `${count} in pool &bull; ${SESSION_CAP} per session`;
+    } else {
+        meta = `${count} question${count === 1 ? '' : 's'}`;
+    }
+
+    return `
+        <div class="practice-card ${available ? '' : 'disabled'}">
+            <span class="practice-icon" aria-hidden="true">${mode.icon}</span>
+            <h3 class="practice-title">${esc(mode.label)}</h3>
+            <p class="practice-desc">${esc(mode.description)}</p>
+            <p class="practice-count ${available ? '' : 'muted'}">${meta}</p>
+            <button type="button"
+                    class="btn ${available ? 'btn-primary' : 'btn-outline'} btn-block"
+                    onclick="startModePractice('${mode.id}')"
+                    ${available ? '' : 'disabled aria-disabled="true"'}>
+                ${available ? 'Start Practice'
+                    : pools.hasHistory && mode.id !== 'all' ? 'Nothing to practise' : 'Unavailable'}
+            </button>
+        </div>`;
+}
+
+/**
+ * Build an untimed session from one of the smart-practice modes and
+ * hand it to the existing runner.
+ * @param {'all'|'incorrect'|'repeated'|'weak'} mode
+ */
+async function startModePractice(mode) {
+    try {
+        const questions = await window.dataLayer.loadQuestions();
+        const pools = buildSmartPools(questions);
+        const pool = pools[mode] || [];
+
+        if (!pool.length) {
+            toastSafe('Nothing to practise yet.');
+            return;
+        }
+
+        // "All" is a random sample; targeted modes keep worst-first ordering
+        // so the most-missed questions come up even when truncated.
+        const ordered = mode === 'all' ? shuffle(pool) : pool;
+        const selected = ordered.slice(0, SESSION_CAP);
+        const label = (PRACTICE_MODES.find((m) => m.id === mode) || {}).label || 'Smart Practice';
+
+        document.getElementById('practiceControls').style.display = 'none';
+        const section = document.getElementById('smartModeSection');
+        if (section) section.style.display = 'none';
+        document.getElementById('practiceContent').style.display = 'block';
+
+        initPracticeRunner(selected, label);
+    } catch (error) {
+        console.error('Error starting smart practice:', error);
+        showPracticeError();
+    }
+}
+
+/** Toast with a graceful fallback if the theme module is unavailable. */
+function toastSafe(message) {
+    if (typeof window.themeManager?.toast === 'function') {
+        window.themeManager.toast(message);
+    } else {
+        alert(message);
+    }
+}
+
 function startSmartPractice() {
-    // This would be implemented with smart practice logic
-    // For now, placeholder
-    alert('Smart practice feature coming soon!');
+    // The legacy "Smart Practice" button now drives the Weak Areas card
+    // (falls back to All Questions when there is no history yet).
+    startModePractice(resultsModule.getHistory().length > 0 ? 'weak' : 'all');
 }
 
 function loadWeaknessChart(history) {
@@ -590,6 +843,7 @@ function showPracticeError() {
 // not otherwise reachable from onclick="..." attributes).
 window.startPracticeSession = startPracticeSession;
 window.startSmartPractice = startSmartPractice;
+window.startModePractice = startModePractice;
 window.navigatePracticeQuestion = navigatePracticeQuestion;
 window.togglePracticeOption = togglePracticeOption;
 window.submitPractice = submitPractice;
