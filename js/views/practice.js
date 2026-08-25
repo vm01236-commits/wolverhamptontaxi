@@ -22,25 +22,25 @@ export const SESSION_CAP = 30;
 export const PRACTICE_MODES = [
     {
         id: 'all',
-        icon: '🎲',
+        icon: '<i class="fas fa-shuffle"></i>',
         label: 'All Questions',
         description: 'A random mix drawn from every topic. Good for general revision.',
     },
     {
         id: 'incorrect',
-        icon: '🎯',
+        icon: '<i class="fas fa-bullseye"></i>',
         label: 'Incorrect Only',
         description: 'Only the questions you last answered wrong or skipped.',
     },
     {
         id: 'repeated',
-        icon: '🔁',
+        icon: '<i class="fas fa-repeat"></i>',
         label: 'Repeated Mistakes',
         description: 'Questions you have missed 2+ times. Highest priority.',
     },
     {
         id: 'weak',
-        icon: '📉',
+        icon: '<i class="fas fa-arrow-trend-down"></i>',
         label: 'Weak Areas',
         description: 'Questions from your lowest-scoring topics.',
     },
@@ -651,7 +651,7 @@ function renderSmartModeCards(questions) {
 
             recSlot.innerHTML = `
                 <div class="recommend-card">
-                    <span class="recommend-icon" aria-hidden="true">💡</span>
+                    <span class="recommend-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></span>
                     <div class="recommend-body">
                         <h3 class="recommend-title">${top ? `Focus on ${esc(top.category)}` : 'You are doing great'}</h3>
                         <p class="recommend-text">${body}</p>

@@ -107,7 +107,7 @@ export function setFontScale(scale) {
 export function toggleTheme() {
     const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
     setTheme(next);
-    toast(next === 'dark' ? '🌙 Dark mode on' : '☀️ Light mode on');
+    toast(next === 'dark' ? 'Dark mode on' : 'Light mode on');
     return next;
 }
 
@@ -117,7 +117,7 @@ function updateToggleUI(theme, preference) {
         const isDark = theme === 'dark';
         const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
 
-        btn.textContent = isDark ? '☀️' : '🌙';
+        btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         btn.setAttribute('aria-label', label);
         btn.setAttribute('title',
             preference === 'system' ? `${label} (following system)` : label);

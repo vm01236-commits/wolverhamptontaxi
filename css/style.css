@@ -90,15 +90,22 @@ ul {
 .logo-text {
     letter-spacing: -0.02em;
     line-height: 1;
+    font-size: 1.18rem;
 }
 
 .logo-in {
-    font-weight: 500;
-    color: var(--text-muted);
+    font-weight: 800;
+    color: var(--red);
 }
 
 .logo-accent {
-    color: var(--red);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1;
+    margin-top: 4px;
 }
 
 .nav-links {

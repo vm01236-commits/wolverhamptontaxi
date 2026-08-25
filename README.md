@@ -8,10 +8,10 @@ A web-based mock-exam and practice platform for the Wolverhampton taxi / hackney
 
 - **Mock Tests** — Five timed mock papers (28 questions each, 40-minute limit, 75% pass mark) that mirror the real exam format, with instant score and pass/fail feedback.
 - **Smart Practice** — Topic-based practice sessions plus four adaptive modes:
-  - 🎲 All Questions
-  - 🎯 Incorrect Only
-  - 🔁 Repeated Mistakes
-  - 📉 Weak Areas
+  - All Questions
+  - Incorrect Only
+  - Repeated Mistakes
+  - Weak Areas
   with a recommendation banner and per-topic performance statistics.
 - **Results & Review** — Detailed score summary with an answer-by-answer review (filter by correct / incorrect / skipped) and full explanations.
 - **History** — Chronological record of every attempt with score dots, PASS/FAIL badges, time taken and one-click delete.

@@ -67,9 +67,9 @@ export function init(container) {
                 <p class="settings-help">Dark mode reduces glare when studying in low light.</p>
                 <div class="segmented" role="radiogroup" aria-labelledby="setting-theme">
                     ${[
-                        { id: 'light', label: '☀️ Light' },
-                        { id: 'dark', label: '🌙 Dark' },
-                        { id: 'system', label: '💻 System' },
+                        { id: 'light', label: '<i class="fas fa-sun"></i> Light' },
+                        { id: 'dark', label: '<i class="fas fa-moon"></i> Dark' },
+                        { id: 'system', label: '<i class="fas fa-laptop"></i> System' },
                     ].map((t) => `
                         <button class="segment ${prefs.theme === t.id ? 'active' : ''}"
                                 type="button" role="radio" data-theme-option="${t.id}"

@@ -321,7 +321,7 @@ function renderSession(container) {
 
                     <div class="qtimer" id="qTimer">
                         <div class="qtimer-head">
-                            <span class="qtimer-label"><span aria-hidden="true">⏱</span> Time on this question</span>
+                            <span class="qtimer-label"><i class="fas fa-stopwatch" aria-hidden="true"></i> Time on this question</span>
                             <span class="qtimer-value" id="qTimerValue">00:00</span>
                         </div>
                         <div class="qtimer-track" id="qTimerTrack" role="progressbar"
@@ -569,7 +569,7 @@ function renderCurrentQuestion() {
                 <span class="question-type-badge">${typeLabel(q.type)}</span>
             </div>
             <button class="bookmark-btn ${bookmarked ? 'active' : ''}" id="bookmarkToggle" type="button"
-                    aria-pressed="${bookmarked}">${bookmarked ? '★ Bookmarked' : '☆ Bookmark'}</button>
+                    aria-pressed="${bookmarked}">${bookmarked ? '<i class="fas fa-star"></i> Bookmarked' : '<i class="far fa-star"></i> Bookmark'}</button>
         </div>
 
         <p class="question-text">${escapeHtml(q.question)}</p>

@@ -732,6 +732,9 @@ html {
     font-weight: 700;
     cursor: pointer;
     transition: background 0.2s ease, color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .segment:hover {
@@ -875,8 +878,8 @@ html {
 }
 
 .recommend-icon {
-    font-size: 1.6rem;
-    line-height: 1;
+    width: 46px;
+    height: 46px;
 }
 
 .recommend-body {
@@ -971,9 +974,9 @@ html {
 }
 
 .practice-icon {
-    font-size: 1.9rem;
-    line-height: 1;
-    margin-bottom: 10px;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 12px;
 }
 
 .practice-title {
@@ -1281,4 +1284,54 @@ html {
     font-weight: 400;
     font-size: 0.9rem;
     margin-top: 6px;
+}
+/* ============================================================
+   MODERN ICON TILES — consistent graphical icons on cards
+   Replaces the emoji-icons previously used on statistic, feature,
+   practice-mode and recommendation cards with Font Awesome glyphs
+   inside soft gradient chips. Colors come from theme/scheme tokens
+   so the whole set follows the active Appearance setting.
+   ============================================================ */
+.stat-icon,
+.feature-icon,
+.practice-icon,
+.recommend-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--tint-navy) 0%, var(--tint-navy-soft) 100%);
+    color: var(--navy-2);
+    font-size: 1.15rem;
+    line-height: 1;
+    box-shadow: inset 0 0 0 1px var(--border-navy), var(--shadow-sm);
+    flex-shrink: 0;
+}
+
+/* Larger tile on the dashboard feature cards */
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.3rem;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+/* Slide the practice-mode card icon in with the card */
+.practice-icon {
+    transition: transform 0.2s ease;
+}
+
+.practice-card:hover .practice-icon {
+    transform: scale(1.08) translateY(-1px);
+}
+
+/* Spacing for the small inline icons inside buttons/links */
+.bookmark-remove i,
+.bookmark-btn i,
+.theme-toggle i,
+.qtimer-label i {
+    margin-right: 6px;
 }

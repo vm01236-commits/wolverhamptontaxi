@@ -151,7 +151,7 @@ function renderGuide(guide) {
     const tocItems = sections.map((section, index) => `
         <li>
             <a href="#section-${index}">
-                <div class="guide-toc-icon">${section.icon || '📖'}</div>
+                <div class="guide-toc-icon">${section.icon || '<i class="fas fa-book-open"></i>'}</div>
                 <span>${section.title}</span>
             </a>
         </li>

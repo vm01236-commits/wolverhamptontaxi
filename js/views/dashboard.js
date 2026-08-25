@@ -65,19 +65,19 @@ export function init(container) {
             <!-- Features -->
             <section class="features">
                 <div class="feature-card">
-                    <span class="feature-icon">📖</span>
+                    <span class="feature-icon"><i class="fas fa-book-open"></i></span>
                     <h3>Study</h3>
                     <p>5 chapters with search, progress tracking and bookmarks.</p>
                     <a href="#guide" class="feature-link" data-view="guide">View Guide</a>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">🧪</span>
+                    <span class="feature-icon"><i class="fas fa-pen-to-square"></i></span>
                     <h3>Practice</h3>
                     <p>17 timed tests with 3 question types and instant feedback.</p>
                     <a href="#exams" class="feature-link" data-view="exams">Try a Mock Test</a>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">📊</span>
+                    <span class="feature-icon"><i class="fas fa-chart-line"></i></span>
                     <h3>Track</h3>
                     <p>Results, charts, history and answer review to improve.</p>
                     <a href="#history" class="feature-link" data-view="history">View History</a>
@@ -137,28 +137,28 @@ function populateStatsStrip(questions, mocksIndex, guide, faqs) {
 
     statsStrip.innerHTML = `
         <div class="stat-card">
-            <span class="stat-icon">⏱</span>
+            <span class="stat-icon"><i class="fas fa-stopwatch"></i></span>
             <div class="stat-info">
                 <span class="stat-value">40</span>
                 <span class="stat-label">min per test</span>
             </div>
         </div>
         <div class="stat-card">
-            <span class="stat-icon">📚</span>
+            <span class="stat-icon"><i class="fas fa-layer-group"></i></span>
             <div class="stat-info">
                 <span class="stat-value">7</span>
                 <span class="stat-label">categories</span>
             </div>
         </div>
         <div class="stat-card">
-            <span class="stat-icon">🧪</span>
+            <span class="stat-icon"><i class="fas fa-list-check"></i></span>
             <div class="stat-info">
                 <span class="stat-value">${mocksIndex.mockTests.length}</span>
                 <span class="stat-label">mock tests</span>
             </div>
         </div>
         <div class="stat-card">
-            <span class="stat-icon">✅</span>
+            <span class="stat-icon"><i class="fas fa-bullseye"></i></span>
             <div class="stat-info">
                 <span class="stat-value">75%</span>
                 <span class="stat-label">pass mark</span>

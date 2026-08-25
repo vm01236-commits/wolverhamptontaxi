@@ -104,7 +104,7 @@ function bookmarkCard(q) {
         <div class="bookmark-card">
             <div class="bookmark-card-top">
                 <span class="question-type-badge ${typeClass(q.type)}">${typeLabel(q.type)}</span>
-                <button class="bookmark-remove" type="button" data-remove="${q.id}">★ Remove</button>
+                <button class="bookmark-remove" type="button" data-remove="${q.id}"><i class="fas fa-star"></i> Remove</button>
             </div>
             <p class="bookmark-question">${escapeHtml(q.question)}</p>
             ${optionsHtml}
