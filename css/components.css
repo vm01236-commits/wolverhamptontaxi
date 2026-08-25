@@ -1335,3 +1335,143 @@ html {
 .qtimer-label i {
     margin-right: 6px;
 }
+
+/* ============================================================
+   DASHBOARD REFRESH — icon chips, quick actions, category rows
+   Tokens used: --tint-{navy,green,red,amber} and -soft variants
+   that exist in every theme / colour-scheme, plus the solid
+   --navy-2 / --green / --red / --amber brand colours for the
+   glyph inside each chip. The 4-tone palette is intentional: it
+   keeps the colour-scheme system (warm/cool/contrast/mono)
+   working without forking per-scheme tints.
+   ============================================================ */
+.icon-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--tint-navy) 0%, var(--tint-navy-soft) 100%);
+    color: var(--navy-2);
+    box-shadow: inset 0 0 0 1px var(--border-navy), var(--shadow-sm);
+    line-height: 1;
+}
+
+.icon-chip--sm { width: 40px; height: 40px; border-radius: 12px; font-size: 0.95rem; }
+.icon-chip--md { width: 52px; height: 52px; font-size: 1.25rem; position: relative; }
+.icon-chip--lg { width: 56px; height: 56px; font-size: 1.3rem; border-radius: 16px; }
+
+.icon-chip--navy  { background: linear-gradient(135deg, var(--tint-navy)  0%, var(--tint-navy-soft)  100%); color: var(--navy-2); box-shadow: inset 0 0 0 1px var(--border-navy),  var(--shadow-sm); }
+.icon-chip--green { background: linear-gradient(135deg, var(--tint-green) 0%, var(--tint-green-soft) 100%); color: var(--green);     box-shadow: inset 0 0 0 1px var(--border-green), var(--shadow-sm); }
+.icon-chip--red   { background: linear-gradient(135deg, var(--tint-red)   0%, var(--tint-red-soft)   100%); color: var(--red);       box-shadow: inset 0 0 0 1px var(--border-red),   var(--shadow-sm); }
+.icon-chip--amber { background: linear-gradient(135deg, var(--tint-amber) 0%, var(--tint-amber-soft) 100%); color: var(--amber);     box-shadow: inset 0 0 0 1px var(--border-amber), var(--shadow-sm); }
+
+/* ---- Quick Actions list ---- */
+.qa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.qa-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.qa-item:hover {
+    background: var(--tint-navy-soft);
+    border-color: var(--border-navy);
+}
+
+.qa-item:hover .qa-chevron {
+    transform: translateX(4px);
+    color: var(--navy-2);
+}
+
+.qa-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.qa-item-title {
+    font-weight: 800;
+    color: var(--navy);
+    font-size: 0.95rem;
+}
+
+.qa-item-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.qa-chevron {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* ---- Question Distribution rows (replaces old .level-dot) ---- */
+.level-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.level-icon {
+    margin-right: 0;
+    transition: transform 0.2s ease;
+}
+
+.level-card:hover .level-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* ---- Progress card head row (title + View Details pill) ---- */
+.progress-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.progress-card-head .section-title {
+    margin-bottom: 0;
+}
+
+.progress-view-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: var(--tint-navy-soft);
+    color: var(--navy-2);
+    border: 1px solid var(--border-navy);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.progress-view-details:hover {
+    background: var(--tint-navy);
+    color: var(--navy);
+}
